@@ -1887,6 +1887,7 @@ html {
 }
 
 /* --- Additions for multi-page version --- */
+.hero--bg { background-image: url('generated_image.png'); 
 .nav-menu--static {gap: var(--space-32);}
 .hero--with-image .hero-media {margin: var(--space-24) auto; max-width: 980px;}
 .hero-media img {width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(59,130,246,0.15);}
