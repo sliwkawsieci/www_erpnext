@@ -48,6 +48,7 @@ function setupNavigationHandlers() {
     navLinks.forEach(function(link) {
         link.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             const pageId = this.getAttribute('data-page');
             console.log('Nav link clicked:', pageId);
             if (pageId) {
@@ -61,6 +62,7 @@ function setupNavigationHandlers() {
     if (logoLink) {
         logoLink.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             console.log('Logo clicked');
             showPage('home');
         });
@@ -73,6 +75,7 @@ function setupNavigationHandlers() {
     productButtons.forEach(function(button) {
         button.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             const pageId = this.getAttribute('data-page');
             console.log('Product button clicked:', pageId);
             if (pageId) {
@@ -88,6 +91,7 @@ function setupNavigationHandlers() {
     contactButtons.forEach(function(button) {
         button.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             console.log('Contact button clicked');
             scrollToContact();
         });
@@ -96,21 +100,12 @@ function setupNavigationHandlers() {
 
 // Setup external links
 function setupExternalLinks() {
-    console.log('Setting up external links...');
     const externalLinks = document.querySelectorAll('a[href^="http"]');
-    console.log('Found external links:', externalLinks.length);
-    
     externalLinks.forEach(function(link) {
         if (!link.getAttribute('target')) {
             link.setAttribute('target', '_blank');
             link.setAttribute('rel', 'noopener noreferrer');
         }
-        
-        // Add click handler to ensure it works
-        link.addEventListener('click', function(e) {
-            console.log('External link clicked:', this.href);
-            // Let the browser handle the navigation naturally
-        });
     });
 }
 
@@ -120,44 +115,29 @@ function setupFAQHandlers() {
     const faqQuestions = document.querySelectorAll('.faq-question');
     console.log('Found FAQ questions:', faqQuestions.length);
     
-    faqQuestions.forEach(function(question, index) {
+    faqQuestions.forEach(function(question) {
         question.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            console.log('FAQ question clicked:', index);
+            console.log('FAQ question clicked');
             
             const faqItem = this.parentElement;
             const faqAnswer = faqItem.querySelector('.faq-answer');
             const isActive = this.classList.contains('active');
             
-            console.log('FAQ item active state:', isActive);
-            
-            // Close all other FAQ items first
+            // Close all other FAQ items
             faqQuestions.forEach(function(otherQuestion) {
-                if (otherQuestion !== question) {
-                    const otherItem = otherQuestion.parentElement;
-                    const otherAnswer = otherItem.querySelector('.faq-answer');
-                    
-                    otherQuestion.classList.remove('active');
-                    if (otherAnswer) {
-                        otherAnswer.classList.remove('active');
-                    }
-                }
+                const otherItem = otherQuestion.parentElement;
+                const otherAnswer = otherItem.querySelector('.faq-answer');
+                
+                otherQuestion.classList.remove('active');
+                otherAnswer.classList.remove('active');
             });
             
-            // Toggle current item
+            // Toggle current item (only open if it wasn't already active)
             if (!isActive) {
                 this.classList.add('active');
-                if (faqAnswer) {
-                    faqAnswer.classList.add('active');
-                }
-                console.log('FAQ opened:', index);
-            } else {
-                this.classList.remove('active');
-                if (faqAnswer) {
-                    faqAnswer.classList.remove('active');
-                }
-                console.log('FAQ closed:', index);
+                faqAnswer.classList.add('active');
             }
         });
     });
@@ -167,21 +147,28 @@ function setupFAQHandlers() {
 function showPage(pageId) {
     console.log('Switching to page:', pageId);
     
-    // Hide all pages
+    // Validate pageId
+    const validPages = ['home', 'erpnext', 'crm', 'helpdesk'];
+    if (!validPages.includes(pageId)) {
+        console.error('Invalid page ID:', pageId);
+        return;
+    }
+    
+    // Hide all pages first
     const allPages = document.querySelectorAll('.page-content');
     console.log('Found pages:', allPages.length);
     
     allPages.forEach(function(page) {
         page.classList.add('hidden');
+        page.style.display = 'none';
     });
     
     // Show selected page
     const targetPage = document.getElementById('page-' + pageId);
     if (targetPage) {
         targetPage.classList.remove('hidden');
+        targetPage.style.display = 'block';
         currentPage = pageId;
-        
-        console.log('Page switched to:', pageId);
         
         // Update navigation state
         updateNavigationState(pageId);
@@ -196,6 +183,10 @@ function showPage(pageId) {
         closeMobileMenu();
         
         console.log('Successfully switched to page:', pageId);
+        
+        // Force a reflow to ensure the page is visible
+        targetPage.offsetHeight;
+        
     } else {
         console.error('Page not found:', 'page-' + pageId);
     }
@@ -317,7 +308,6 @@ function setupFormValidation() {
 
     form.addEventListener('submit', function (e) {
         e.preventDefault();
-        console.log('Form submission attempted');
         handleFormSubmit();
     });
 
@@ -360,21 +350,20 @@ function validateSingleField(fieldId) {
         case 'email':
             if (!value) {
                 errorMessage = 'Podaj adres e-mail.';
-            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-                errorMessage = 'Podaj poprawny adres e-mail.';
+            } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value)) {
+                errorMessage = 'Podaj poprawny e-mail.';
             }
             break;
         case 'phone':
-            // Phone is optional, only validate if provided
-            if (value && !/^[\+]?[\s\-\(\)]*([0-9][\s\-\(\)]*){9,}$/.test(value.replace(/\s+/g, ''))) {
+            if (value && !/^([+]?\d{1,3}[\s-]?)?(\d{9,12})$/.test(value.replace(/\s+/g, ''))) {
                 errorMessage = 'Podaj poprawny numer telefonu.';
             }
             break;
         case 'message':
             if (!value) {
-                errorMessage = 'Opisz swoją potrzebę.';
+                errorMessage = 'Krótko opisz swoją potrzebę.';
             } else if (value.length < 10) {
-                errorMessage = 'Opis musi mieć co najmniej 10 znaków.';
+                errorMessage = 'Opis musi mieć conajmniej 10 znaków.';
             }
             break;
     }
@@ -394,7 +383,6 @@ function handleFormSubmit() {
     const successMessage = document.getElementById('successMessage');
     
     if (!form || !successMessage) {
-        console.log('Form elements missing');
         return;
     }
 
@@ -407,27 +395,15 @@ function handleFormSubmit() {
     const phone = form.phone.value.trim();
     const message = form.message.value.trim();
 
-    console.log('Form values:', { firstName, lastName, email, phone, message: message.substring(0, 50) + '...' });
-
     // Validate form
     const isValid = validateForm(firstName, lastName, email, phone, message);
 
-    console.log('Form validation result:', isValid);
-
     // If valid, show success message
     if (isValid) {
-        console.log('Form is valid, showing success message');
         form.classList.add('hidden');
         successMessage.classList.remove('hidden');
-        
         // Scroll to success message
-        setTimeout(function() {
-            successMessage.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-        
-        console.log('Success message displayed');
-    } else {
-        console.log('Form validation failed');
+        successMessage.scrollIntoView({ behavior: 'smooth' });
     }
 }
 
@@ -453,12 +429,10 @@ function showFieldError(fieldId, errorMessage) {
     const errorElement = document.getElementById(fieldId + 'Error');
     const inputElement = document.getElementById(fieldId);
     
-    console.log('Showing error for field:', fieldId, errorMessage);
-    
     if (errorElement) {
         errorElement.textContent = errorMessage;
         errorElement.style.display = 'block';
-        errorElement.style.color = '#ef4444';
+        errorElement.style.color = 'red';
         errorElement.style.fontSize = '14px';
         errorElement.style.marginTop = '4px';
     }
@@ -511,9 +485,6 @@ function clearAllErrors() {
 window.addEventListener('popstate', function(event) {
     if (event.state && event.state.page) {
         showPage(event.state.page);
-    } else {
-        // If no state, try to get from URL hash
-        checkUrlHash();
     }
 });
 
@@ -531,7 +502,7 @@ function updateHistory(pageId) {
 // Get page title based on page ID
 function getPageTitle(pageId) {
     const titles = {
-        'home': 'ERPNext.pl - Obniż koszty i zyskaj pełną kontrolę nad produkcją i sprzedażą',
+        'home': 'ERPNext.pl - Darmowy Ekosystem ERP Bez Licencji',
         'erpnext': 'ERPNext - Kompletny System ERP | ERPNext.pl',
         'crm': 'Frappe CRM - Nowoczesne Zarządzanie Sprzedażą | ERPNext.pl',
         'helpdesk': 'Frappe Helpdesk - Profesjonalne Wsparcie Klientów | ERPNext.pl'
@@ -547,8 +518,6 @@ function checkUrlHash() {
     
     if (validPages.includes(hash)) {
         showPage(hash);
-    } else if (hash === '') {
-        showPage('home');
     }
 }
 
@@ -580,20 +549,6 @@ function addInteractiveEnhancements() {
             this.style.transform = 'translateY(0px)';
         });
     });
-    
-    // Add loading animation for images
-    const images = document.querySelectorAll('img');
-    images.forEach(function(img) {
-        img.addEventListener('load', function() {
-            this.style.opacity = '1';
-        });
-        
-        img.addEventListener('error', function() {
-            console.warn('Image failed to load:', this.src);
-            // Don't hide the image, let it show broken image icon
-            this.style.opacity = '0.5';
-        });
-    });
 }
 
 // Initialize interactive enhancements after DOM load
@@ -612,9 +567,7 @@ document.addEventListener('keydown', function(event) {
         activeFAQs.forEach(function(faq) {
             const faqAnswer = faq.parentElement.querySelector('.faq-answer');
             faq.classList.remove('active');
-            if (faqAnswer) {
-                faqAnswer.classList.remove('active');
-            }
+            faqAnswer.classList.remove('active');
         });
     }
     
@@ -686,22 +639,6 @@ if (typeof window !== 'undefined') {
         showPage: showPage,
         scrollToContact: scrollToContact,
         debugPageVisibility: debugPageVisibility,
-        currentPage: function() { return currentPage; },
-        validateForm: validateForm,
-        handleFormSubmit: handleFormSubmit
+        currentPage: function() { return currentPage; }
     };
 }
-
-// Initialize all features when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('ERPNext.pl application initialized successfully');
-    
-    // Add some debugging info
-    setTimeout(function() {
-        console.log('Current page after init:', currentPage);
-        console.log('Available pages:', document.querySelectorAll('.page-content').length);
-        console.log('Navigation links:', document.querySelectorAll('.nav-link').length);
-        console.log('FAQ questions:', document.querySelectorAll('.faq-question').length);
-        console.log('External links:', document.querySelectorAll('a[href^="http"]').length);
-    }, 1000);
-});
