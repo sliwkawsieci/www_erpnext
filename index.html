@@ -1,735 +1,288 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ERPNext.pl - Darmowy Ekosystem ERP Bez Licencji</title>
-    <meta name="description" content="ERPNext - jedyny darmowy system ERP bez opłat licencyjnych. Hosting od 20 zł/miesiąc. Migracja z Excela w tydzień.">
-    <meta name="keywords" content="ERP, system ERP, ERPNext, Frappe CRM, Frappe Helpdesk, bez licencji, hosting od 20zł, open source">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ERPNext.pl - Darmowy Ekosystem ERP Bez Licencji</title>
+  <meta name="description" content="ERPNext - jedyny darmowy system ERP bez opłat licencyjnych. Hosting od 20 zł/miesiąc. Migracja z Excela w tydzień." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Navigation Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="container">
-                <div class="nav-content">
-                    <div class="nav-logo">
-                        <a href="#" data-page="home">ERPNext.pl</a>
-                    </div>
-                    
-                    <!-- Desktop Navigation -->
-                    <ul class="nav-menu" id="navMenu">
-                        <li><a href="#" class="nav-link active" data-page="home">Strona Główna</a></li>
-                        <li><a href="#" class="nav-link" data-page="erpnext">ERPNext</a></li>
-                        <li><a href="#" class="nav-link" data-page="crm">Frappe CRM</a></li>
-                        <li><a href="#" class="nav-link" data-page="helpdesk">Frappe Helpdesk</a></li>
-                        <li><a href="#" class="nav-link" data-action="contact">Kontakt</a></li>
-                    </ul>
-                    
-                    <!-- Mobile Menu Toggle -->
-                    <button class="nav-toggle" id="navToggle">
-                        <span class="nav-toggle-bar"></span>
-                        <span class="nav-toggle-bar"></span>
-                        <span class="nav-toggle-bar"></span>
-                    </button>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main class="main-content">
-        <!-- HOME PAGE -->
-        <section class="page-content" id="page-home">
-            <!-- Hero Section - Rebuilt for clarity -->
-            <section class="hero">
-                <div class="container">
-                    <div class="hero-content">
-                        <h1>Darmowy Ekosystem ERP Bez Licencji</h1>
-                        <p class="hero-subtitle">Kompleksowe rozwiązanie dla polskich firm: ERPNext + Frappe CRM + Helpdesk</p>
-                        <p class="hero-description">Obniż koszty, zyskaj pełną kontrolę nad produkcją i sprzedażą. Hosting już od 20 zł miesięcznie.</p>
-                        
-                        <div class="hero-pricing-highlight">
-                            <div class="pricing-highlight-item">
-                                <span class="highlight-icon">✓</span>
-                                <span>Bez opłat licencyjnych</span>
-                            </div>
-                            <div class="pricing-highlight-item">
-                                <span class="highlight-icon">✓</span>
-                                <span>Hosting od 20 zł/miesiąc</span>
-                            </div>
-                            <div class="pricing-highlight-item">
-                                <span class="highlight-icon">✓</span>
-                                <span>Open source</span>
-                            </div>
-                        </div>
-                        
-                        <div class="hero-urgency">
-                            <div class="urgency-item">
-                                <span class="urgency-icon">⚡</span>
-                                <span>Twoi konkurenci już automatyzują procesy – nie zostań w tyle</span>
-                            </div>
-                            <div class="urgency-item">
-                                <span class="urgency-icon">📊</span>
-                                <span>Migracja z Excela w tydzień – bez utraty danych</span>
-                            </div>
-                        </div>
-                        
-                        <div class="hero-buttons">
-                            <button class="btn btn--primary btn--lg" data-action="contact">Zamów Demo</button>
-                            <button class="btn btn--outline btn--lg" data-action="contact">Poproś o Konsultację</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Products Overview -->
-            <section class="products-overview">
-                <div class="container">
-                    <h2>Kompletny Ekosystem dla Twojego Biznesu</h2>
-                    
-                    <div class="products-grid">
-                        <!-- ERPNext -->
-                        <div class="product-card">
-                            <div class="product-icon">
-                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
-                                    <path d="M9 12l2 2 4-4"/>
-                                </svg>
-                            </div>
-                            <h3>ERPNext</h3>
-                            <p class="product-description">Kompletny system ERP obsługujący wszystkie procesy biznesowe</p>
-                            <ul class="product-features">
-                                <li>Księgowość i finanse</li>
-                                <li>Produkcja i magazyn</li>
-                                <li>Kadry i płace</li>
-                                <li>CRM i sprzedaż</li>
-                            </ul>
-                            <button class="btn btn--primary" data-page="erpnext">Dowiedz się więcej o ERPNext</button>
-                        </div>
-
-                        <!-- Frappe CRM -->
-                        <div class="product-card">
-                            <div class="product-icon">
-                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="9" cy="7" r="4"/>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                                </svg>
-                            </div>
-                            <h3>Frappe CRM</h3>
-                            <p class="product-description">Nowoczesny CRM z intuicyjnym interfejsem Vue.js</p>
-                            <ul class="product-features">
-                                <li>Pipeline sprzedażowy</li>
-                                <li>Zarządzanie leadami</li>
-                                <li>Automatyzacja</li>
-                                <li>Integracje komunikacyjne</li>
-                            </ul>
-                            <button class="btn btn--primary" data-page="crm">Dowiedz się więcej o CRM</button>
-                        </div>
-
-                        <!-- Frappe Helpdesk -->
-                        <div class="product-card">
-                            <div class="product-icon">
-                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                                    <path d="M9 10h1a3 3 0 0 0 0-6H7v6"/>
-                                    <path d="M17 10h1a3 3 0 0 0 0-6h-3v6"/>
-                                </svg>
-                            </div>
-                            <h3>Frappe Helpdesk</h3>
-                            <p class="product-description">Profesjonalny system wsparcia klientów</p>
-                            <ul class="product-features">
-                                <li>Zarządzanie biletami</li>
-                                <li>Zarządzanie SLA</li>
-                                <li>Portal klientów</li>
-                                <li>Baza wiedzy</li>
-                            </ul>
-                            <button class="btn btn--primary" data-page="helpdesk">Dowiedz się więcej o Helpdesk</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Problem-Solution Section - Moved after Products Overview -->
-            <section class="problem-solution">
-                <div class="container">
-                    <div class="problem-solution-grid">
-                        <div class="problem-card">
-                            <div class="problem-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                                    <line x1="12" y1="9" x2="12" y2="13"/>
-                                    <line x1="12" y1="17" x2="12.01" y2="17"/>
-                                </svg>
-                            </div>
-                            <h3>Problemy z którymi się borykasz:</h3>
-                            <ul class="problem-list">
-                                <li>Chaos w arkuszach Excel i rozproszonych danych</li>
-                                <li>Powtarzalna praca ręczna zabierająca czas</li>
-                                <li>Brak kontroli nad terminami dostaw i zapasami</li>
-                                <li>Trudność w generowaniu raportów i analiz</li>
-                                <li>Problemy z komunikacją między działami</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="solution-card">
-                            <div class="solution-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
-                                    <path d="M9 12l2 2 4-4"/>
-                                </svg>
-                            </div>
-                            <h3>ERPNext rozwiązuje te problemy:</h3>
-                            <ul class="solution-list">
-                                <li>Wszystkie dane w jednym systemie</li>
-                                <li>Automatyzacja procesów i eliminacja ręcznej pracy</li>
-                                <li>Kontrola terminów, zapasów i przepływów</li>
-                                <li>Raporty i analizy w czasie rzeczywistym</li>
-                                <li>Zintegrowana komunikacja i współpraca</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Pricing Packages Section - Updated Prices -->
-            <section class="pricing-packages">
-                <div class="container">
-                    <h2>Wybierz Pakiet Dopasowany do Twoich Potrzeb</h2>
-                    <p class="pricing-subtitle">Przejrzyste ceny bez ukrytych kosztów. Płacisz tylko za to, czego potrzebujesz.</p>
-                    
-                    <div class="packages-grid">
-                        <div class="package-card">
-                            <div class="package-header">
-                                <h3>HOSTING BASIC</h3>
-                                <div class="package-price">20 zł<span>/miesiąc</span></div>
-                                <p class="package-description">Dla małych firm rozpoczynających automatyzację</p>
-                            </div>
-                            <ul class="package-features">
-                                <li>Hosting ERPNext w chmurze</li>
-                                <li>Automatyczne backupy</li>
-                                <li>Certyfikat SSL</li>
-                                <li>Wsparcie email</li>
-                                <li>Do 5 użytkowników</li>
-                            </ul>
-                            <button class="btn btn--outline btn--full-width" data-action="contact">Wybierz Basic</button>
-                        </div>
-
-                        <div class="package-card package-popular">
-                            <div class="popular-badge">Najpopularniejszy</div>
-                            <div class="package-header">
-                                <h3>HOSTING + SUPPORT</h3>
-                                <div class="package-price">499 zł<span>/miesiąc</span></div>
-                                <p class="package-description">Dla firm potrzebujących profesjonalnego wsparcia</p>
-                            </div>
-                            <ul class="package-features">
-                                <li>Wszystko z pakietu Basic</li>
-                                <li>Telefoniczne wsparcie</li>
-                                <li>Automatyczne aktualizacje</li>
-                                <li>Monitoring 24/7</li>
-                                <li>Do 50 użytkowników</li>
-                                <li>Szkolenia online</li>
-                            </ul>
-                            <button class="btn btn--primary btn--full-width" data-action="contact">Wybierz Support</button>
-                        </div>
-
-                        <div class="package-card">
-                            <div class="package-header">
-                                <h3>HOSTING + WDROŻENIE</h3>
-                                <div class="package-price">już od 5 000 zł<span>/miesiąc</span></div>
-                                <p class="package-description">Kompleksowe rozwiązanie z pełnym wdrożeniem</p>
-                            </div>
-                            <ul class="package-features">
-                                <li>Wszystko z pakietu Support</li>
-                                <li>Pełne wdrożenie systemu</li>
-                                <li>Migracja danych z Excel/innych systemów</li>
-                                <li>Szkolenie na miejscu</li>
-                                <li>Nieograniczeni użytkownicy</li>
-                                <li>Dedykowany opiekun</li>
-                            </ul>
-                            <button class="btn btn--primary btn--full-width" data-action="contact">Wybierz Wdrożenie</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- FAQ Section -->
-            <section class="faq-section">
-                <div class="container">
-                    <h2>Najczęściej Zadawane Pytania</h2>
-                    <p class="faq-subtitle">Odpowiadamy na najważniejsze wątpliwości dotyczące ERPNext</p>
-                    
-                    <div class="faq-list">
-                        <div class="faq-item">
-                            <button class="faq-question" data-faq="0">
-                                <span>Czy ERPNext jest naprawdę darmowy?</span>
-                                <span class="faq-icon">+</span>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Tak, ERPNext to w 100% darmowy system bez opłat licencyjnych. Płacisz tylko za hosting i opcjonalnie za wsparcie techniczne. Nie ma ukrytych kosztów ani opłat za użytkownika.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-question" data-faq="1">
-                                <span>Czy moje dane będą bezpieczne?</span>
-                                <span class="faq-icon">+</span>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Tak, masz pełną kontrolę nad swoimi danymi. ERPNext to otwarty kod źródłowy, więc możesz zweryfikować bezpieczeństwo. Dane są regularnie backupowane i przechowywane na bezpiecznych serwerach w Polsce.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-question" data-faq="2">
-                                <span>Czy otrzymam wsparcie techniczne?</span>
-                                <span class="faq-icon">+</span>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Tak, oferujemy różne poziomy wsparcia - od email po telefoniczne. Współpracujemy także z zaufanymi partnerami wdrożeniowymi w Polsce, którzy zapewnią profesjonalne wsparcie.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-question" data-faq="3">
-                                <span>Jak przebiega migracja z Excel lub obecnego systemu?</span>
-                                <span class="faq-icon">+</span>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Migracja jest bezpieczna i szybka. Nasze zespoły mają doświadczenie w migrowaniu danych z Excel, CSV i innych systemów ERP. Proces zajmuje średnio tydzień bez ryzyka utraty danych.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <button class="faq-question" data-faq="4">
-                                <span>Ile tak naprawdę kosztuje wdrożenie?</span>
-                                <span class="faq-icon">+</span>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Koszty zależą od złożoności firmy. Oferujemy przejrzyste pakiety już od 20 zł/miesiąc za hosting. Pełne wdrożenie z migracją danych i szkoleniem zaczyna się od 5 000 zł/miesiąc - bez dodatkowych opłat.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </section>
-
-        <!-- ERPNEXT PAGE -->
-        <section class="page-content hidden" id="page-erpnext">
-            <section class="page-hero">
-                <div class="container">
-                    <div class="page-hero-content">
-                        <h1>ERPNext - Kompletny System ERP</h1>
-                        <p class="page-hero-subtitle">Nowoczesny, otwartoźródłowy ERP obsługujący wszystkie procesy biznesowe. Od księgowości po produkcję - wszystko w jednym systemie.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="modules-section">
-                <div class="container">
-                    <h2>Moduły ERPNext</h2>
-                    
-                    <div class="modules-grid">
-                        <!-- Księgowość i Finanse -->
-                        <div class="module-card">
-                            <div class="module-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                    <line x1="8" y1="21" x2="16" y2="21"/>
-                                    <line x1="12" y1="17" x2="12" y2="21"/>
-                                </svg>
-                            </div>
-                            <h3>Księgowość i Finanse</h3>
-                            <p>Kompleksowa księgowość z automatyczną synchronizacją</p>
-                            <ul class="module-features">
-                                <li>Faktury i płatności</li>
-                                <li>Raporty finansowe</li>
-                                <li>Rozrachunki z kontrahentami</li>
-                                <li>Rozliczenia podatkowe</li>
-                            </ul>
-                        </div>
-
-                        <!-- Produkcja -->
-                        <div class="module-card">
-                            <div class="module-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="3"/>
-                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                                </svg>
-                            </div>
-                            <h3>Produkcja</h3>
-                            <p>Zarządzanie procesami produkcyjnymi</p>
-                            <ul class="module-features">
-                                <li>Zestawienie materiałów (BOM)</li>
-                                <li>Planowanie produkcji</li>
-                                <li>Śledzenie kosztów</li>
-                                <li>Kontrola jakości</li>
-                            </ul>
-                        </div>
-
-                        <!-- Zarządzanie Magazynem -->
-                        <div class="module-card">
-                            <div class="module-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                                    <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
-                                    <line x1="12" y1="22.08" x2="12" y2="12"/>
-                                </svg>
-                            </div>
-                            <h3>Zarządzanie Magazynem</h3>
-                            <p>Inteligentne zarządzanie magazynem</p>
-                            <ul class="module-features">
-                                <li>Stany magazynowe</li>
-                                <li>Automatyczne zamówienia</li>
-                                <li>Wielomagazynowość</li>
-                                <li>Śledzenie partii</li>
-                            </ul>
-                        </div>
-
-                        <!-- Kadry i Płace -->
-                        <div class="module-card">
-                            <div class="module-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="9" cy="7" r="4"/>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                                </svg>
-                            </div>
-                            <h3>Kadry i Płace</h3>
-                            <p>Kompleksowe zarządzanie zasobami ludzkimi</p>
-                            <ul class="module-features">
-                                <li>Kadry i urlopy</li>
-                                <li>System wynagrodzeń</li>
-                                <li>Rekrutacja</li>
-                                <li>Oceny pracowników</li>
-                            </ul>
-                        </div>
-
-                        <!-- CRM i Sprzedaż -->
-                        <div class="module-card">
-                            <div class="module-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 3v18h18"/>
-                                    <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
-                                </svg>
-                            </div>
-                            <h3>CRM i Sprzedaż</h3>
-                            <p>Sprzedaż zintegrowana z ERP</p>
-                            <ul class="module-features">
-                                <li>Zarządzanie leadami</li>
-                                <li>Oferty i zamówienia</li>
-                                <li>Pipeline sprzedażowy</li>
-                                <li>Analityka sprzedaży</li>
-                            </ul>
-                        </div>
-
-                        <!-- Projekty -->
-                        <div class="module-card">
-                            <div class="module-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-                                </svg>
-                            </div>
-                            <h3>Projekty</h3>
-                            <p>Profesjonalne zarządzanie projektami</p>
-                            <ul class="module-features">
-                                <li>Planowanie zadań</li>
-                                <li>Śledzenie czasu</li>
-                                <li>Budżetowanie</li>
-                                <li>Wykresy Gantta</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="cta-section">
-                        <button class="btn btn--primary btn--lg" data-action="contact">Zapytaj o ERPNext</button>
-                    </div>
-                </div>
-            </section>
-        </section>
-
-        <!-- FRAPPE CRM PAGE -->
-        <section class="page-content hidden" id="page-crm">
-            <section class="page-hero">
-                <div class="container">
-                    <div class="page-hero-content">
-                        <h1>Frappe CRM - Nowoczesne Zarządzanie Sprzedażą</h1>
-                        <p class="page-hero-subtitle">Open-source CRM nowej generacji z intuicyjnym interfejsem Vue.js. Bez opłat per-user, z pełną automatyzacją procesów sprzedażowych.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="features-detailed">
-                <div class="container">
-                    <h2>Kluczowe Funkcjonalności</h2>
-                    
-                    <div class="features-detailed-grid">
-                        <!-- Zarządzanie Leadami -->
-                        <div class="feature-detailed-card">
-                            <div class="feature-detailed-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="8 14 12 18 16 14"/>
-                                    <polyline points="8 10 12 6 16 10"/>
-                                </svg>
-                            </div>
-                            <div class="feature-detailed-content">
-                                <h3>Zarządzanie Leadami</h3>
-                                <p>Kompleksowe zarządzanie leadami z automatycznym punktowaniem</p>
-                                <ul class="feature-detailed-features">
-                                    <li>Punktowanie i kategoryzacja leadów</li>
-                                    <li>Automatyczne przypomnienia</li>
-                                    <li>Źródła pozyskania</li>
-                                    <li>Konwersja do transakcji</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Pipeline Sprzedażowy -->
-                        <div class="feature-detailed-card">
-                            <div class="feature-detailed-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 3v18h18"/>
-                                    <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
-                                </svg>
-                            </div>
-                            <div class="feature-detailed-content">
-                                <h3>Pipeline Sprzedażowy</h3>
-                                <p>Wizualny pipeline sprzedażowy typu kanban</p>
-                                <ul class="feature-detailed-features">
-                                    <li>Przeciąganie i upuszczanie transakcji</li>
-                                    <li>Niestandardowe etapy</li>
-                                    <li>Prognozy przychodów</li>
-                                    <li>Śledzenie wartości</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Zarządzanie Kontaktami -->
-                        <div class="feature-detailed-card">
-                            <div class="feature-detailed-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="9" cy="7" r="4"/>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                                </svg>
-                            </div>
-                            <div class="feature-detailed-content">
-                                <h3>Zarządzanie Kontaktami</h3>
-                                <p>Centralna baza wszystkich kontaktów</p>
-                                <ul class="feature-detailed-features">
-                                    <li>360° widok klienta</li>
-                                    <li>Historia komunikacji</li>
-                                    <li>Segmentacja klientów</li>
-                                    <li>Import/export danych</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Centrum Komunikacji -->
-                        <div class="feature-detailed-card">
-                            <div class="feature-detailed-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                                </svg>
-                            </div>
-                            <div class="feature-detailed-content">
-                                <h3>Centrum Komunikacji</h3>
-                                <p>Wszystkie kanały komunikacji w jednym miejscu</p>
-                                <ul class="feature-detailed-features">
-                                    <li>Integracja z emailem</li>
-                                    <li>WhatsApp Business</li>
-                                    <li>Twilio voice/SMS</li>
-                                    <li>Śledzenie rozmów</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cta-section">
-                        <button class="btn btn--primary btn--lg" data-action="contact">Zapytaj o Frappe CRM</button>
-                    </div>
-                </div>
-            </section>
-        </section>
-
-        <!-- FRAPPE HELPDESK PAGE -->
-        <section class="page-content hidden" id="page-helpdesk">
-            <section class="page-hero">
-                <div class="container">
-                    <div class="page-hero-content">
-                        <h1>Frappe Helpdesk - Profesjonalne Wsparcie Klientów</h1>
-                        <p class="page-hero-subtitle">Kompleksowy system zarządzania zgłoszeniami klientów. Open-source rozwiązanie bez opłat per-agent z pełną automatyzacją procesów wsparcia.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="features-detailed">
-                <div class="container">
-                    <h2>Zaawansowane Funkcjonalności</h2>
-                    
-                    <div class="features-detailed-grid">
-                        <!-- Zarządzanie Zgłoszeniami -->
-                        <div class="feature-detailed-card">
-                            <div class="feature-detailed-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 12l2 2 4-4"/>
-                                    <path d="M21 12c.552 0 1-.449 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .551.448 1 1 1h3v4l4-4h11z"/>
-                                </svg>
-                            </div>
-                            <div class="feature-detailed-content">
-                                <h3>Zarządzanie Zgłoszeniami</h3>
-                                <p>Centralne zarządzanie wszystkimi zgłoszeniami</p>
-                                <ul class="feature-detailed-features">
-                                    <li>Zgłoszenia z wielu kanałów</li>
-                                    <li>Ustalanie priorytetów</li>
-                                    <li>Oś czasu aktywności</li>
-                                    <li>Załączniki i komentarze</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Zarządzanie SLA -->
-                        <div class="feature-detailed-card">
-                            <div class="feature-detailed-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="12 6 12 12 16 14"/>
-                                </svg>
-                            </div>
-                            <div class="feature-detailed-content">
-                                <h3>Zarządzanie SLA</h3>
-                                <p>Zarządzanie umowami o poziomie usług</p>
-                                <ul class="feature-detailed-features">
-                                    <li>Automatyczne alerty</li>
-                                    <li>Eskalacja zgłoszeń</li>
-                                    <li>Monitorowanie czasów odpowiedzi</li>
-                                    <li>Raportowanie SLA</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Baza Wiedzy -->
-                        <div class="feature-detailed-card">
-                            <div class="feature-detailed-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                                </svg>
-                            </div>
-                            <div class="feature-detailed-content">
-                                <h3>Baza Wiedzy</h3>
-                                <p>Baza wiedzy dla klientów i agentów</p>
-                                <ul class="feature-detailed-features">
-                                    <li>Artykuły samoobsługowe</li>
-                                    <li>Zarządzanie FAQ</li>
-                                    <li>Wyszukiwarka</li>
-                                    <li>Kategoryzacja treści</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Portal Klienta -->
-                        <div class="feature-detailed-card">
-                            <div class="feature-detailed-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <line x1="2" y1="12" x2="22" y2="12"/>
-                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                                </svg>
-                            </div>
-                            <div class="feature-detailed-content">
-                                <h3>Portal Klienta</h3>
-                                <p>Portal samoobsługowy dla klientów</p>
-                                <ul class="feature-detailed-features">
-                                    <li>Składanie zgłoszeń</li>
-                                    <li>Śledzenie statusu</li>
-                                    <li>Historia zgłoszeń</li>
-                                    <li>Dostęp do bazy wiedzy</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cta-section">
-                        <button class="btn btn--primary btn--lg" data-action="contact">Zapytaj o Frappe Helpdesk</button>
-                    </div>
-                </div>
-            </section>
-        </section>
-    </main>
-
-    <!-- Contact Form Section -->
-    <section class="contact" id="contact-form">
-        <div class="container">
-            <div class="contact-content">
-                <h2>Skontaktuj się z nami</h2>
-                <p>Gotowy na automatyzację procesów w Twojej firmie? Wypełnij formularz, a nasi eksperci skontaktują się z Tobą.</p>
-                
-                <form class="contact-form" id="contactForm" novalidate>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label" for="firstName">Imię *</label>
-                            <input type="text" class="form-control" id="firstName" name="firstName" required>
-                            <span class="error-message" id="firstNameError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="lastName">Nazwisko *</label>
-                            <input type="text" class="form-control" id="lastName" name="lastName" required>
-                            <span class="error-message" id="lastNameError"></span>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label" for="email">E-mail *</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                            <span class="error-message" id="emailError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="phone">Telefon</label>
-                            <input type="tel" class="form-control" id="phone" name="phone">
-                            <span class="error-message" id="phoneError"></span>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label" for="message">Opis problemu/zapytania *</label>
-                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Opisz swoje potrzeby biznesowe i jak możemy Ci pomóc..." required></textarea>
-                        <span class="error-message" id="messageError"></span>
-                    </div>
-                    
-                    <button type="submit" class="btn btn--primary btn--lg btn--full-width">Wyślij Zapytanie</button>
-                </form>
-                
-                <!-- Success Message (hidden by default) -->
-                <div class="success-message hidden" id="successMessage">
-                    <h3>Dziękujemy!</h3>
-                    <p>Twoje zapytanie zostało wysłane. Nasi eksperci skontaktują się z Tobą wkrótce.</p>
-                </div>
-            </div>
+  <header class="header">
+    <nav class="nav">
+      <div class="container">
+        <div class="nav-content">
+          <div class="nav-logo">
+            <a href="index.html">ERPNext.pl</a>
+          </div>
+          <ul class="nav-menu nav-menu--static" id="navMenu">
+            <li><a class="nav-link active" href="index.html">Strona Główna</a></li>
+            <li><a class="nav-link " href="erpnext.html">ERPNext</a></li>
+            <li><a class="nav-link " href="crm.html">Frappe CRM</a></li>
+            <li><a class="nav-link " href="helpdesk.html">Frappe Helpdesk</a></li>
+            <li><a class="nav-link" href="index.html#contact-form">Kontakt</a></li>
+          </ul>
+          <button class="nav-toggle" id="navToggle">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </button>
         </div>
-    </section>
+      </div>
+    </nav>
+  </header>
+  <main class="main-content">
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <p>&copy; 2025 ERPNext.pl - Rozwiązania ERP dla polskich firm</p>
-                </div>
-                <div class="footer-partners">
-                    <p class="partners-title">Zaufani partnerzy wdrożeniowi ERPNext w Polsce:</p>
-                    <a href="https://www.erptech.pl" target="_blank" class="partners-link">www.erptech.pl</a>
-                </div>
-            </div>
+  <section class="hero hero--with-image">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Darmowy Ekosystem ERP Bez Licencji</h1>
+        <p class="hero-subtitle">Kompleksowe rozwiązanie dla polskich firm: ERPNext + Frappe CRM + Helpdesk</p>
+        <p class="hero-description">Obniż koszty, zyskaj pełną kontrolę nad produkcją i sprzedażą. Hosting już od 20 zł miesięcznie.</p>
+
+        <div class="hero-media">
+          <img src="generated_image.png" alt="Zespół pracujący z systemem ERP" loading="lazy">
         </div>
-    </footer>
 
-    <script src="app.js"></script>
+        <div class="hero-pricing-highlight">
+          <div class="pricing-highlight-item"><span class="highlight-icon">✓</span><span>Bez opłat licencyjnych</span></div>
+          <div class="pricing-highlight-item"><span class="highlight-icon">✓</span><span>Hosting od 20 zł/miesiąc</span></div>
+          <div class="pricing-highlight-item"><span class="highlight-icon">✓</span><span>Open source</span></div>
+        </div>
+
+        <div class="hero-urgency">
+          <div class="urgency-item"><span class="urgency-icon">⚡</span><span>Twoi konkurenci już automatyzują procesy – nie zostań w tyle</span></div>
+          <div class="urgency-item"><span class="urgency-icon">📊</span><span>Migracja z Excela w tydzień – bez utraty danych</span></div>
+        </div>
+
+        <div class="hero-buttons">
+          <a class="btn btn--primary btn--lg" href="#contact-form">Zamów Demo</a>
+          <a class="btn btn--outline btn--lg" href="#contact-form">Poproś o Konsultację</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-overview">
+    <div class="container">
+      <h2>Kompletny Ekosystem dla Twojego Biznesu</h2>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-icon">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3>ERPNext</h3>
+          <p class="product-description">Kompletny system ERP obsługujący wszystkie procesy biznesowe</p>
+          <ul class="product-features">
+            <li>Księgowość i finanse</li>
+            <li>Produkcja i magazyn</li>
+            <li>Kadry i płace</li>
+            <li>CRM i sprzedaż</li>
+          </ul>
+          <a class="btn btn--primary" href="erpnext.html">Dowiedz się więcej o ERPNext</a>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Frappe CRM</h3>
+          <p class="product-description">Nowoczesny CRM z intuicyjnym interfejsem Vue.js</p>
+          <ul class="product-features">
+            <li>Pipeline sprzedażowy</li>
+            <li>Zarządzanie leadami</li>
+            <li>Automatyzacja</li>
+            <li>Integracje komunikacyjne</li>
+          </ul>
+          <a class="btn btn--primary" href="crm.html">Dowiedz się więcej o CRM</a>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              <path d="M9 10h1a3 3 0 0 0 0-6H7v6"/>
+              <path d="M17 10h1a3 3 0 0 0 0-6h-3v6"/>
+            </svg>
+          </div>
+          <h3>Frappe Helpdesk</h3>
+          <p class="product-description">Profesjonalny system wsparcia klientów</p>
+          <ul class="product-features">
+            <li>Zarządzanie biletami</li>
+            <li>Zarządzanie SLA</li>
+            <li>Portal klientów</li>
+            <li>Baza wiedzy</li>
+          </ul>
+          <a class="btn btn--primary" href="helpdesk.html">Dowiedz się więcej o Helpdesk</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem-solution">
+    <div class="container">
+      <div class="problem-solution-grid">
+        <div class="problem-card">
+          <div class="problem-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <h3>Problemy z którymi się borykasz:</h3>
+          <ul class="problem-list">
+            <li>Chaos w arkuszach Excel i rozproszonych danych</li>
+            <li>Powtarzalna praca ręczna zabierająca czas</li>
+            <li>Brak kontroli nad terminami dostaw i zapasami</li>
+            <li>Trudność w generowaniu raportów i analiz</li>
+            <li>Problemy z komunikacją między działami</li>
+          </ul>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3>ERPNext rozwiązuje te problemy:</h3>
+          <ul class="solution-list">
+            <li>Wszystkie dane w jednym systemie</li>
+            <li>Automatyzacja procesów i eliminacja ręcznej pracy</li>
+            <li>Kontrola terminów, zapasów i przepływów</li>
+            <li>Raporty i analizy w czasie rzeczywistym</li>
+            <li>Zintegrowana komunikacja i współpraca</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-packages">
+    <div class="container">
+      <h2>Wybierz Pakiet Dopasowany do Twoich Potrzeb</h2>
+      <p class="pricing-subtitle">Przejrzyste ceny bez ukrytych kosztów. Płacisz tylko za to, czego potrzebujesz.</p>
+      <div class="packages-grid">
+        <div class="package-card">
+          <div class="package-header">
+            <h3>HOSTING BASIC</h3>
+            <div class="package-price">20 zł<span>/miesiąc</span></div>
+            <p class="package-description">Dla małych firm rozpoczynających automatyzację</p>
+          </div>
+          <ul class="package-features">
+            <li>Hosting ERPNext w chmurze</li>
+            <li>Automatyczne backupy</li>
+            <li>Certyfikat SSL</li>
+            <li>Wsparcie email</li>
+            <li>Do 5 użytkowników</li>
+          </ul>
+          <a class="btn btn--outline btn--full-width" href="#contact-form">Wybierz Basic</a>
+        </div>
+        <div class="package-card package-popular">
+          <div class="popular-badge">Najpopularniejszy</div>
+          <div class="package-header">
+            <h3>HOSTING + SUPPORT</h3>
+            <div class="package-price">499 zł<span>/miesiąc</span></div>
+            <p class="package-description">Dla firm potrzebujących profesjonalnego wsparcia</p>
+          </div>
+          <ul class="package-features">
+            <li>Wszystko z pakietu Basic</li>
+            <li>Telefoniczne wsparcie</li>
+            <li>Automatyczne aktualizacje</li>
+            <li>Monitoring 24/7</li>
+            <li>Do 50 użytkowników</li>
+            <li>Szkolenia online</li>
+          </ul>
+          <a class="btn btn--primary btn--full-width" href="#contact-form">Wybierz Support</a>
+        </div>
+        <div class="package-card">
+          <div class="package-header">
+            <h3>HOSTING + WDROŻENIE</h3>
+            <div class="package-price">już od 5 000 zł<span>/miesiąc</span></div>
+            <p class="package-description">Kompleksowe rozwiązanie z pełnym wdrożeniem</p>
+          </div>
+          <ul class="package-features">
+            <li>Wszystko z pakietu Support</li>
+            <li>Pełne wdrożenie systemu</li>
+            <li>Migracja danych z Excel/innych systemów</li>
+            <li>Szkolenie na miejscu</li>
+            <li>Nieograniczeni użytkownicy</li>
+            <li>Dedykowany opiekun</li>
+          </ul>
+          <a class="btn btn--primary btn--full-width" href="#contact-form">Wybierz Wdrożenie</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+  <section class="contact" id="contact-form">
+    <div class="container">
+      <div class="contact-content">
+        <h2>Skontaktuj się z nami</h2>
+        <p>Gotowy na automatyzację procesów w Twojej firmie? Wypełnij formularz, a nasi eksperci skontaktują się z Tobą.</p>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="firstName">Imię *</label>
+              <input type="text" class="form-control" id="firstName" name="firstName" required>
+              <span class="error-message" id="firstNameError"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lastName">Nazwisko *</label>
+              <input type="text" class="form-control" id="lastName" name="lastName" required>
+              <span class="error-message" id="lastNameError"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="email">E-mail *</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+              <span class="error-message" id="emailError"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Telefon</label>
+              <input type="tel" class="form-control" id="phone" name="phone">
+              <span class="error-message" id="phoneError"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Opis problemu/zapytania *</label>
+            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Opisz swoje potrzeby biznesowe i jak możemy Ci pomóc..." required></textarea>
+            <span class="error-message" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg btn--full-width">Wyślij Zapytanie</button>
+        </form>
+        <div class="success-message hidden" id="successMessage">
+          <h3>Dziękujemy!</h3>
+          <p>Twoje zapytanie zostało wysłane. Nasi eksperci skontaktują się z Tobą wkrótce.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p>&copy; 2025 ERPNext.pl - Rozwiązania ERP dla polskich firm</p>
+        </div>
+        <div class="footer-partners footer-partners--with-logo">
+          <p class="partners-title">Zaufani partnerzy wdrożeniowi ERPNext w Polsce:</p>
+          <a href="https://www.erptech.pl" target="_blank" class="partners-link partners-link--with-logo">
+            <img src="logo_erptech.png" alt="ERPtech logo" class="partners-logo" />
+            <span>www.erptech.pl</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
 </body>
 </html>
