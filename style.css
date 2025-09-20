@@ -881,14 +881,6 @@ select.form-control {
   z-index: 3;
 }
 
-.hero-content {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Hero green theme overrides */
-.hero h1,
 .hero .hero-subtitle,
 .hero .hero-description {
   color: #fafafa; /* green */
@@ -931,38 +923,49 @@ select.form-control {
 }
 
 .page-hero {
-  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-  padding: 3rem 0;
+  background: linear-gradient(135deg, #0b1640 0%, #0a2a6a 100%);
+  padding: 4rem 0;
   text-align: center;
+  color: #ffffff;
+  position: relative;
+  min-height: 50vh;
+  overflow: hidden;
 }
 
 .hero-content,
 .page-hero-content {
-  text-align: center;
   max-width: 900px;
   margin: 0 auto;
 }
 
+/* Ensure page-hero content is above background image */
+.page-hero .container {
+  position: relative;
+  z-index: 3;
+}
+
 .hero h1,
 .page-hero h1 {
-  font-size: var(--font-size-4xl);
+  font-size: clamp(34px, 5.5vw, 56px);
   margin-bottom: var(--space-16);
   color: #fafafa;
-  font-weight: var(--font-weight-bold);
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
 }
 
 .hero-subtitle,
 .page-hero-subtitle {
-  font-size: var(--font-size-xl);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-24);
-  line-height: 1.6;
+  font-size: clamp(20px, 2.6vw, 28px);
+  color: #f3f7ff;
+  margin-bottom: var(--space-20);
+  line-height: 1.5;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.3);
 }
 
 .hero-description {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-32);
+  font-size: clamp(16px, 2vw, 20px);
+  color: #e6f2ea;
+  margin-bottom: var(--space-24);
   line-height: 1.6;
 }
 
@@ -979,11 +982,11 @@ select.form-control {
   display: flex;
   align-items: center;
   gap: var(--space-8);
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   padding: var(--space-12) var(--space-20);
   border-radius: var(--radius-full);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .pricing-highlight-item .highlight-icon {
