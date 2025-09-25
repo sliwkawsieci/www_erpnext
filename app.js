@@ -50,23 +50,29 @@ function setupFormValidation() {
   ];
 
   form.addEventListener('submit', function (e) {
+    e.preventDefault();
     let ok = true;
     fields.forEach(function(id){ if (!validateSingleField(id)) ok = false; });
-    if (!ok) {
-      e.preventDefault();
-      console.warn('[ContactForm] Validation failed, blocking submit');
-      return;
-    }
-    // Ensure native POST directly to Frappe Web Form
-    const baseUrl = 'https://system.erptech.cloud/zgloszenie-kontaktowe/new';
-    if (!form.getAttribute('action')) form.setAttribute('action', baseUrl);
-    if (!form.getAttribute('method')) form.setAttribute('method', 'post');
-    // Explicitly submit to avoid interference from other listeners
-    try {
-      console.info('[ContactForm] Submitting to', form.getAttribute('action'));
-      form.submit();
-    } catch (err) {
-      console.error('[ContactForm] Submit error:', err);
+    if (ok) {
+      // Reliable Variant B: redirect to Web Form with prefilled params
+      const baseUrl = 'https://system.erptech.cloud/zgloszenie-kontaktowe/new';
+      const params = new URLSearchParams();
+      const map = {
+        organization: 'organization',
+        firstName: 'first_name',
+        lastName: 'last_name',
+        email: 'email',
+        phone: 'phone',
+        website: 'website',
+        noOfEmployees: 'no_of_employees',
+        details: 'details'
+      };
+      Object.keys(map).forEach(function(localId){
+        const el = document.getElementById(localId);
+        if (el && el.value) params.set(map[localId], el.value.trim());
+      });
+      const target = baseUrl + '?' + params.toString();
+      window.location.href = target;
     }
   });
 
