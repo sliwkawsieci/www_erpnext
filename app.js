@@ -54,10 +54,9 @@ function setupFormValidation() {
     let ok = true;
     fields.forEach(function(id){ if (!validateSingleField(id)) ok = false; });
     if (ok) {
-      // Variant B: redirect to Frappe Web Form with prefilled params
+      // Reliable Variant B: redirect to Web Form with prefilled params
       const baseUrl = 'https://system.erptech.cloud/zgloszenie-kontaktowe/new';
       const params = new URLSearchParams();
-      // Map local field IDs to expected Web Form field names (from provided Web Form setup)
       const map = {
         organization: 'organization',
         firstName: 'first_name',
@@ -72,9 +71,6 @@ function setupFormValidation() {
         const el = document.getElementById(localId);
         if (el && el.value) params.set(map[localId], el.value.trim());
       });
-      // No default source/status anymore per request
-      // If the instance supports an embedded layout param, you can enable it here.
-      // params.set('embedded', '1');
       const target = baseUrl + '?' + params.toString();
       window.location.href = target;
     }
