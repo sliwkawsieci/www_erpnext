@@ -38,16 +38,45 @@ function setupFormValidation() {
   const successMessage = document.getElementById('successMessage');
   if (!form || !successMessage) return;
 
-  const fields = ['firstName','lastName','email','phone','message'];
+  const fields = [
+    'organization',
+    'firstName',
+    'lastName',
+    'email',
+    'phone',
+    'website',
+    'noOfEmployees',
+    'details'
+  ];
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     let ok = true;
     fields.forEach(function(id){ if (!validateSingleField(id)) ok = false; });
     if (ok) {
-      form.classList.add('hidden');
-      successMessage.classList.remove('hidden');
-      successMessage.scrollIntoView({behavior:'smooth'});
+      // Variant B: redirect to Frappe Web Form with prefilled params
+      const baseUrl = 'https://system.erptech.cloud/zgloszenie-kontaktowe/new';
+      const params = new URLSearchParams();
+      // Map local field IDs to expected Web Form field names (from provided Web Form setup)
+      const map = {
+        organization: 'organization',
+        firstName: 'first_name',
+        lastName: 'last_name',
+        email: 'email',
+        phone: 'phone',
+        website: 'website',
+        noOfEmployees: 'no_of_employees',
+        details: 'details'
+      };
+      Object.keys(map).forEach(function(localId){
+        const el = document.getElementById(localId);
+        if (el && el.value) params.set(map[localId], el.value.trim());
+      });
+      // No default source/status anymore per request
+      // If the instance supports an embedded layout param, you can enable it here.
+      // params.set('embedded', '1');
+      const target = baseUrl + '?' + params.toString();
+      window.location.href = target;
     }
   });
 
@@ -69,15 +98,18 @@ function validateSingleField(fieldId) {
     case 'lastName': if (!value) err = 'Podaj nazwisko.'; break;
     case 'email':
       if (!value) err = 'Podaj adres e-mail.';
-      else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value)) err = 'Podaj poprawny e-mail.';
+      else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/i.test(value)) err = 'Podaj poprawny e-mail.';
       break;
     case 'phone':
       if (value && !/^([+]?\d{1,3}[\s-]?)?(\d{9,12})$/.test(value.replace(/\s+/g,''))) err='Podaj poprawny numer telefonu.';
       break;
-    case 'message':
-      if (!value) err='Krótko opisz swoją potrzebę.';
-      else if (value.length < 10) err='Opis musi mieć conajmniej 10 znaków.';
+    case 'website':
+      if (value && !/^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/\S*)?$/i.test(value)) err='Podaj poprawny adres strony WWW (np. https://firma.pl).';
       break;
+    case 'details':
+      if (value && value.length < 10) err='Szczegóły powinny mieć co najmniej 10 znaków.';
+      break;
+    
   }
   if (err) { showFieldError(fieldId, err); return false; }
   clearFieldError(fieldId); return true;

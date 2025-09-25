@@ -668,6 +668,26 @@
                 <form class="contact-form" id="contactForm" novalidate>
                     <div class="form-row">
                         <div class="form-group">
+                            <label class="form-label" for="organization">Nazwa firmy</label>
+                            <input type="text" class="form-control" id="organization" name="organization" placeholder="np. ACME Sp. z o.o.">
+                            <span class="error-message" id="organizationError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="noOfEmployees">Liczba pracowników</label>
+                            <select class="form-control" id="noOfEmployees" name="noOfEmployees">
+                                <option value="">Wybierz…</option>
+                                <option>1-10</option>
+                                <option>11-50</option>
+                                <option>51-200</option>
+                                <option>201-500</option>
+                                <option>500+</option>
+                            </select>
+                            <span class="error-message" id="noOfEmployeesError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
                             <label class="form-label" for="firstName">Imię *</label>
                             <input type="text" class="form-control" id="firstName" name="firstName" required>
                             <span class="error-message" id="firstNameError"></span>
@@ -678,7 +698,7 @@
                             <span class="error-message" id="lastNameError"></span>
                         </div>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label" for="email">E-mail *</label>
@@ -691,13 +711,21 @@
                             <span class="error-message" id="phoneError"></span>
                         </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label" for="message">Opis problemu/zapytania *</label>
-                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Opisz swoje potrzeby biznesowe i jak możemy Ci pomóc..." required></textarea>
-                        <span class="error-message" id="messageError"></span>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="website">Strona WWW</label>
+                            <input type="url" class="form-control" id="website" name="website" placeholder="https://firma.pl">
+                            <span class="error-message" id="websiteError"></span>
+                        </div>
                     </div>
-                    
+
+                    <div class="form-group">
+                        <label class="form-label" for="details">Szczegóły</label>
+                        <textarea class="form-control" id="details" name="details" rows="5" placeholder="Opisz swoje potrzeby biznesowe i jak możemy Ci pomóc..."></textarea>
+                        <span class="error-message" id="detailsError"></span>
+                    </div>
+
                     <button type="submit" class="btn btn--primary btn--lg btn--full-width">Wyślij Zapytanie</button>
                 </form>
                 
@@ -728,6 +756,6 @@
         </div>
     </footer>
 
-    <script src="app.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
