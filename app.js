@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setupFormValidation();
   setupMobileNavigation();
   setupExternalLinks();
+  setupPageRouting();
 });
 
 function setupExternalLinks() {
@@ -30,6 +31,62 @@ function setupMobileNavigation() {
       navToggle.classList.remove('active');
       navMenu.classList.remove('active');
     }
+  });
+}
+
+function setupPageRouting() {
+  // Only for index.html (SPA-like) where multiple sections exist
+  const pages = document.querySelectorAll('.page-content');
+  const navMenu = document.getElementById('navMenu');
+  if (!pages || pages.length === 0) return; // no multi-section structure, skip
+
+  const showPage = function (pageName) {
+    const targetId = 'page-' + pageName;
+    let found = false;
+    pages.forEach(function (sec) {
+      if (sec.id === targetId) {
+        sec.classList.remove('hidden');
+        found = true;
+      } else {
+        sec.classList.add('hidden');
+      }
+    });
+    // Update active link styling
+    document.querySelectorAll('.nav-link[data-page]').forEach(function (a) {
+      if (a.getAttribute('data-page') === pageName) a.classList.add('active');
+      else a.classList.remove('active');
+    });
+    if (found) console.info('[Routing] Switched to', pageName);
+  };
+
+  // Wire clicks for data-page
+  document.querySelectorAll('[data-page]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      const pageName = a.getAttribute('data-page');
+      if (!pageName) return;
+      e.preventDefault();
+      showPage(pageName);
+      // Close mobile menu if open
+      const navToggle = document.getElementById('navToggle');
+      if (navToggle && navMenu) {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+      // Scroll to top after switching
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // Wire contact action scroll
+  document.querySelectorAll('[data-action="contact"]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const contact = document.getElementById('contact-form');
+      if (contact) {
+        contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        console.info('[Routing] Scrolled to contact form');
+      }
+    });
   });
 }
 
