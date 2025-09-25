@@ -54,13 +54,20 @@ function setupFormValidation() {
     fields.forEach(function(id){ if (!validateSingleField(id)) ok = false; });
     if (!ok) {
       e.preventDefault();
+      console.warn('[ContactForm] Validation failed, blocking submit');
       return;
     }
     // Ensure native POST directly to Frappe Web Form
     const baseUrl = 'https://system.erptech.cloud/zgloszenie-kontaktowe/new';
     if (!form.getAttribute('action')) form.setAttribute('action', baseUrl);
     if (!form.getAttribute('method')) form.setAttribute('method', 'post');
-    // Do not preventDefault -> allow browser to submit the form
+    // Explicitly submit to avoid interference from other listeners
+    try {
+      console.info('[ContactForm] Submitting to', form.getAttribute('action'));
+      form.submit();
+    } catch (err) {
+      console.error('[ContactForm] Submit error:', err);
+    }
   });
 
   fields.forEach(function(id){
