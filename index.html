@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -10,39 +10,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="container">
-                <div class="nav-content">
-                    <div class="nav-logo">
-                        <a href="index.html">ERPNext.pl</a>
-                    </div>
-                    
-                    <!-- Desktop Navigation -->
-                    <ul class="nav-menu" id="navMenu">
-                        <li><a href="index.html" class="nav-link active">Strona Główna</a></li>
-                        <li><a href="erpnext.html" class="nav-link">ERPNext</a></li>
-                        <li><a href="crm.html" class="nav-link">CRM</a></li>
-                        <li><a href="helpdesk.html" class="nav-link">Helpdesk</a></li>
-                        <li><a href="index.html#contact-form" class="nav-link">Kontakt</a></li>
-                    </ul>
-                    
-                    <!-- Mobile Menu Toggle -->
-                    <button class="nav-toggle" id="navToggle">
-                        <span class="nav-toggle-bar"></span>
-                        <span class="nav-toggle-bar"></span>
-                        <span class="nav-toggle-bar"></span>
-                    </button>
-                </div>
-            </div>
-        </nav>
-    </header>
+
+        <div data-partial="header"></div>
 
     <main class="main-content">
         <!-- HOME PAGE -->
         <section class="page-content" id="page-home">
-            <!-- Hero Section - Rebuilt for clarity -->
+            <!-- Hero Section -->
             <section class="hero">
                 <div class="hero-background">
                     <img src="pict/hero_office.png" alt="Nowoczesne biuro z systemem ERP" class="hero-bg-image">
@@ -50,28 +24,29 @@
                 </div>
                 <div class="container">
                     <div class="hero-content">
-                        <h1>Kompleksowe rozwiązanie dla polskich firm!</h1>
+                        <h1>Kompleksowe rozwiązanie dla polskich firm</h1>
                         <p class="hero-subtitle">ERP + Frappe CRM + Helpdesk</p>
                         <p class="hero-description">Obniż koszty i zyskaj pełną kontrolę nad procesami.</p>
-                        
+
                         <div class="hero-pricing-highlight">
                             <div class="pricing-highlight-item">
-                                <span class="highlight-icon">✓</span>
+                                <span class="highlight-icon" aria-hidden="true">&#10003;</span>
                                 <span>Bez opłat licencyjnych</span>
                             </div>
                             <div class="pricing-highlight-item">
-                                <span class="highlight-icon">✓</span>
+                                <span class="highlight-icon" aria-hidden="true">&#10003;</span>
                                 <span>Hosting od 20 zł/miesiąc</span>
                             </div>
                             <div class="pricing-highlight-item">
-                                <span class="highlight-icon">✓</span>
+                                <span class="highlight-icon" aria-hidden="true">&#10003;</span>
                                 <span>Open source</span>
                             </div>
                         </div>
-                        
-                        
-                        
-                        <!-- hero-buttons removed per request -->
+
+                        <div class="hero-actions">
+                            <a class="btn btn--primary" href="#contact-form" data-action="contact">Umów darmową konsultację</a>
+                            <a class="btn btn--outline" href="erpnext.html">Zobacz moduły ERPNext</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -400,25 +375,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <p>&copy; 2025 ERPNext.pl - Rozwiązania ERP dla polskich firm</p>
-                </div>
-                <div class="footer-partners">
-                    <p class="partners-title">Zaufani partnerzy wdrożeniowi ERPNext w Polsce:</p>
-                    <a href="https://www.erptech.pl" target="_blank" class="partners-link partners-link--with-logo">
-                      <img src="erptech_logo.png" alt="ERPtech logo" class="partners-logo" />
-                     
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div data-partial="footer"></div>
 
-    <script src="js/shared.js"></script>
-    <script src="js/home.js"></script>
+    <script src="partials/site-partials.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

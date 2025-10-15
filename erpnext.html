@@ -4,39 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ERPNext - Kompletny System ERP | ERPNext.pl</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="pict/favicon.ico" type="image/x-icon" />
   <meta name="description" content="ERPNext - kompletny, otwartoźródłowy ERP dla polskich firm." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header">
-    <nav class="nav">
-      <div class="container">
-        <div class="nav-content">
-          <div class="nav-logo">
-            <a href="index.html">ERPNext.pl</a>
-          </div>
-          <ul class="nav-menu nav-menu--static" id="navMenu">
-            <li><a class="nav-link " href="index.html">Strona Główna</a></li>
-            <li><a class="nav-link active" href="erpnext.html">ERPNext</a></li>
-            <li><a class="nav-link " href="crm.html">Frappe CRM</a></li>
-            <li><a class="nav-link " href="helpdesk.html">Frappe Helpdesk</a></li>
-            <li><a class="nav-link" href="index.html#contact-form">Kontakt</a></li>
-          </ul>
-          <button class="nav-toggle" id="navToggle">
-            <span class="nav-toggle-bar"></span>
-            <span class="nav-toggle-bar"></span>
-            <span class="nav-toggle-bar"></span>
-          </button>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <div data-partial="header"></div>
   <main class="main-content">
 
   <section class="page-hero">
     <div class="hero-background">
-      <img src="hero_office.png" alt="Nowoczesne biuro z systemem ERP" class="hero-bg-image">
+      <img src="pict/hero_office.png" alt="Nowoczesne biuro z systemem ERP" class="hero-bg-image">
       <div class="hero-overlay"></div>
     </div>
     <div class="container">
@@ -116,25 +94,8 @@
     </div>
   </section>
   
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-info">
-          <p>&copy; 2025 ERPNext.pl - Rozwiązania ERP dla polskich firm</p>
-        </div>
-        
-      <div class="footer-partners footer-partners--with-logo">
-        <p class="partners-title">Zaufani partnerzy wdrożeniowi ERPNext w Polsce:</p>
-        <a href="https://www.erptech.pl" target="_blank" class="partners-link partners-link--with-logo">
-          <img src="logo_erptech.png" alt="ERPtech logo" class="partners-logo" />
-          <span>www.erptech.pl</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
-    
-  <script src="js/shared.js"></script>
-  <script src="js/erpnext.js"></script>
+  <div data-partial="footer"></div>
+  <script src="partials/site-partials.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

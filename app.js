@@ -1,11 +1,25 @@
 
-// Minimal JS for multi-page version: form validation + mobile nav + external links
+// Minimal JS for multi-page version: load shared partials, form validation, mobile nav, external links
 document.addEventListener('DOMContentLoaded', function () {
-  setupFormValidation();
+  injectSharedPartials();
   setupMobileNavigation();
+  setActiveNavLink();
   setupExternalLinks();
   setupPageRouting();
+  setupFormValidation();
 });
+
+function injectSharedPartials() {
+  if (!window.SITE_PARTIALS) {
+    console.warn('[Includes] Shared partials are not defined.');
+    return;
+  }
+  document.querySelectorAll('[data-partial]').forEach(function (node) {
+    const key = node.getAttribute('data-partial');
+    if (!key || !window.SITE_PARTIALS[key]) return;
+    node.innerHTML = window.SITE_PARTIALS[key];
+  });
+}
 
 function setupExternalLinks() {
   document.querySelectorAll('a[href^="http"]').forEach(function (link) {
@@ -20,16 +34,27 @@ function setupMobileNavigation() {
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
   if (!navToggle || !navMenu) return;
+
+  var toggleMenu = function (state) {
+    const open = state !== undefined ? state : !navToggle.classList.contains('active');
+    navToggle.classList.toggle('active', open);
+    navMenu.classList.toggle('active', open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+
   navToggle.addEventListener('click', function (e) {
     e.preventDefault();
-    navToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    toggleMenu();
+  });
+  navMenu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      toggleMenu(false);
+    });
   });
   document.addEventListener('click', function (event) {
     const isClickInside = navToggle.contains(event.target) || navMenu.contains(event.target);
     if (!isClickInside) {
-      navToggle.classList.remove('active');
-      navMenu.classList.remove('active');
+      toggleMenu(false);
     }
   });
 }
@@ -51,11 +76,7 @@ function setupPageRouting() {
         sec.classList.add('hidden');
       }
     });
-    // Update active link styling
-    document.querySelectorAll('.nav-link[data-page]').forEach(function (a) {
-      if (a.getAttribute('data-page') === pageName) a.classList.add('active');
-      else a.classList.remove('active');
-    });
+    setActiveNavLink(pageName);
     if (found) console.info('[Routing] Switched to', pageName);
   };
 
@@ -71,6 +92,7 @@ function setupPageRouting() {
       if (navToggle && navMenu) {
         navToggle.classList.remove('active');
         navMenu.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
       }
       // Scroll to top after switching
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -87,6 +109,34 @@ function setupPageRouting() {
         console.info('[Routing] Scrolled to contact form');
       }
     });
+  });
+}
+
+function setActiveNavLink(forcedSlug) {
+  const navLinks = document.querySelectorAll('.nav-link[data-nav]');
+  if (!navLinks.length) return;
+
+  let slug = forcedSlug;
+  if (!slug) {
+    const path = window.location.pathname.split('/').pop() || 'index.html';
+    switch (path) {
+      case 'erpnext.html':
+        slug = 'erpnext';
+        break;
+      case 'crm.html':
+        slug = 'crm';
+        break;
+      case 'helpdesk.html':
+        slug = 'helpdesk';
+        break;
+      default:
+        slug = window.location.hash === '#contact-form' ? 'contact' : 'home';
+    }
+  }
+
+  navLinks.forEach(function (link) {
+    if (link.getAttribute('data-nav') === slug) link.classList.add('active');
+    else link.classList.remove('active');
   });
 }
 
@@ -146,23 +196,26 @@ function validateSingleField(fieldId) {
   const value = input.value.trim();
   let err = '';
 
-  switch(fieldId){
-    case 'firstName': if (!value) err = 'Podaj imię.'; break;
-    case 'lastName': if (!value) err = 'Podaj nazwisko.'; break;
+  switch (fieldId) {
+    case 'firstName':
+      if (!value) err = 'Podaj imie.';
+      break;
+    case 'lastName':
+      if (!value) err = 'Podaj nazwisko.';
+      break;
     case 'email':
       if (!value) err = 'Podaj adres e-mail.';
       else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/i.test(value)) err = 'Podaj poprawny e-mail.';
       break;
     case 'phone':
-      if (value && !/^([+]?\d{1,3}[\s-]?)?(\d{9,12})$/.test(value.replace(/\s+/g,''))) err='Podaj poprawny numer telefonu.';
+      if (value && !/^([+]?[0-9]{1,3}[\s-]?)?([0-9]{9,12})$/.test(value.replace(/\s+/g, ''))) err = 'Podaj poprawny numer telefonu.';
       break;
     case 'website':
-      if (value && !/^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/\S*)?$/i.test(value)) err='Podaj poprawny adres strony WWW (np. https://firma.pl).';
+      if (value && !/^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/\S*)?$/i.test(value)) err = 'Podaj poprawny adres strony WWW (np. https://firma.pl).';
       break;
     case 'details':
-      if (value && value.length < 10) err='Szczegóły powinny mieć co najmniej 10 znaków.';
+      if (value && value.length < 10) err = 'Szczegoly powinny miec co najmniej 10 znakow.';
       break;
-    
   }
   if (err) { showFieldError(fieldId, err); return false; }
   clearFieldError(fieldId); return true;

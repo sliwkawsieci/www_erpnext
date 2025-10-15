@@ -866,6 +866,20 @@ select.form-control {
 
 /* Page Content Management - Fixed CSS for proper page switching */
 
+.hero-actions {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-actions .btn {
+  min-width: 220px;
+  text-align: center;
+}
+
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -1109,7 +1123,7 @@ select.form-control {
 }
 
 .problem-list li::before {
-  content: "✗";
+  content: "\2717";
   position: absolute;
   left: 0;
   color: #dc2626;
@@ -1117,7 +1131,7 @@ select.form-control {
 }
 
 .solution-list li::before {
-  content: "✓";
+  content: "\2713";
   position: absolute;
   left: 0;
   color: #16a34a;
@@ -1195,7 +1209,7 @@ select.form-control {
 }
 
 .product-features li::before {
-  content: "✓";
+  content: "\2022";
   position: absolute;
   left: 0;
   color: var(--color-primary);
@@ -1310,7 +1324,7 @@ select.form-control {
 }
 
 .package-features li::before {
-  content: "✓";
+  content: "\2022";
   position: absolute;
   left: 0;
   color: var(--color-primary);
@@ -1478,7 +1492,7 @@ select.form-control {
 }
 
 .module-features li::before {
-  content: "•";
+  content: "\2022";
   position: absolute;
   left: 0;
   color: var(--color-primary);
@@ -1561,7 +1575,7 @@ select.form-control {
 }
 
 .feature-detailed-features li::before {
-  content: "→";
+  content: "\2022";
   position: absolute;
   left: 0;
   color: var(--color-primary);
@@ -1957,15 +1971,15 @@ html {
   }
 }
 .partners-logo {
-  height: 28px;   /* dopasowana wysokość */
-  width: auto;    /* szerokość proporcjonalna */
+  height: 28px;   /* adjust height */
+  width: auto;    /* maintain aspect ratio */
   display: inline-block;
   vertical-align: middle;
-  margin-right: 6px; /* odstęp od tekstu */
+  margin-right: 6px; /* spacing from text */
 }
 /* --- Additions for multi-page version --- */
-.hero--bg { background-image: url('generated_image.png'); 
-.nav-menu--static {gap: var(--space-32);}
-.hero--with-image .hero-media {margin: var(--space-24) auto; max-width: 980px;}
-.hero-media img {width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(59,130,246,0.15);}
-.footer-partners--with-logo .partners-link--with-logo {display: inline-flex; align-items: center; gap: 10px;} }
+.hero--bg { background-image: url('generated_image.png'); }
+.nav-menu--static { gap: var(--space-32); }
+.hero--with-image .hero-media { margin: var(--space-24) auto; max-width: 980px; }
+.hero-media img { width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(59,130,246,0.15); }
+.footer-partners--with-logo .partners-link--with-logo { display: inline-flex; align-items: center; gap: 10px; }
