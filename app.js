@@ -124,18 +124,24 @@ function setActiveNavLink(forcedSlug) {
   let slug = forcedSlug;
   if (!slug) {
     const path = window.location.pathname.split('/').pop() || 'index.html';
-    switch (path) {
-      case 'erpnext.html':
-        slug = 'erpnext';
-        break;
-      case 'crm.html':
-        slug = 'crm';
-        break;
-      case 'helpdesk.html':
-        slug = 'helpdesk';
-        break;
-      default:
-        slug = window.location.hash === '#contact-form' ? 'contact' : 'home';
+    
+    // Check if it's a case study page
+    if (path === 'casestudies.html' || path.startsWith('case-study-')) {
+      slug = 'casestudies';
+    } else {
+      switch (path) {
+        case 'erpnext.html':
+          slug = 'erpnext';
+          break;
+        case 'crm.html':
+          slug = 'crm';
+          break;
+        case 'helpdesk.html':
+          slug = 'helpdesk';
+          break;
+        default:
+          slug = window.location.hash === '#contact-form' ? 'contact' : 'home';
+      }
     }
   }
 

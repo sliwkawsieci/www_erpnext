@@ -12,6 +12,7 @@ window.SITE_PARTIALS = window.SITE_PARTIALS || {
     '          <li><a class="nav-link" data-nav="erpnext" href="erpnext.html">ERPNext</a></li>',
     '          <li><a class="nav-link" data-nav="crm" href="crm.html">CRM</a></li>',
     '          <li><a class="nav-link" data-nav="helpdesk" href="helpdesk.html">Helpdesk</a></li>',
+    '          <li><a class="nav-link" data-nav="casestudies" href="casestudies.html">Case Studies</a></li>',
     '          <li><a class="nav-link" data-nav="contact" href="index.html#contact-form">Kontakt</a></li>',
     '        </ul>',
     '        <button',
