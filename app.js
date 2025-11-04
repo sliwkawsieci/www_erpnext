@@ -2,11 +2,16 @@
 // Minimal JS for multi-page version: load shared partials, form validation, mobile nav, external links
 document.addEventListener('DOMContentLoaded', function () {
   injectSharedPartials();
-  setupMobileNavigation();
+  // Delay mobile nav setup to ensure partials are injected
+  setTimeout(function() {
+    setupMobileNavigation();
+  }, 50);
   setActiveNavLink();
   setupExternalLinks();
   setupPageRouting();
   setupFormValidation();
+  setupBackToTop();
+  hidePreloader();
 });
 
 function injectSharedPartials() {
@@ -232,4 +237,46 @@ function clearFieldError(fieldId){
   const i = document.getElementById(fieldId);
   if (e){ e.textContent=''; e.style.display='none'; }
   if (i){ i.classList.remove('error'); }
+}
+
+/* Back to Top Button */
+function setupBackToTop() {
+  const backToTop = document.createElement('div');
+  backToTop.className = 'back-to-top';
+  backToTop.innerHTML = '↑';
+  backToTop.setAttribute('aria-label', 'Powrót na górę strony');
+  backToTop.setAttribute('role', 'button');
+  backToTop.setAttribute('tabindex', '0');
+  document.body.appendChild(backToTop);
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  });
+
+  backToTop.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  backToTop.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+}
+
+/* Hide Preloader */
+function hidePreloader() {
+  const preloader = document.querySelector('.page-preloader');
+  if (preloader) {
+    setTimeout(function() {
+      preloader.classList.add('hidden');
+      setTimeout(function() {
+        preloader.remove();
+      }, 500);
+    }, 500);
+  }
 }
