@@ -2342,7 +2342,7 @@ select.form-control {
 .case-study-metrics--modern {
   margin: 0;
   background: var(--color-surface);
-  padding: var(--space-64);
+  padding: var(--space-80);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
 }
@@ -2370,19 +2370,19 @@ select.form-control {
 }
 
 .case-study-detail-section {
-  padding: var(--space-80) 0;
+  padding: var(--space-96) 0;
   background: var(--color-background);
 }
 
 .case-study-detail-section > .container > * + * {
-  margin-top: var(--space-80);
+  margin-top: var(--space-96);
 }
 
 .case-study-detail-header {
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
-  padding-bottom: var(--space-64);
+  padding-bottom: var(--space-80);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -2393,7 +2393,7 @@ select.form-control {
 .case-study-detail-header h1 {
   font-size: var(--font-size-4xl);
   color: var(--color-text);
-  margin: 0 0 var(--space-32);
+  margin: 0 0 var(--space-40);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
 }
@@ -2409,10 +2409,10 @@ select.form-control {
 .detail-meta {
   display: flex;
   justify-content: center;
-  gap: var(--space-48);
+  gap: var(--space-64);
   flex-wrap: wrap;
-  padding-top: var(--space-32);
-  margin-top: var(--space-8);
+  padding-top: var(--space-40);
+  margin-top: var(--space-16);
   border-top: 1px solid var(--color-border);
 }
 
@@ -2870,7 +2870,7 @@ select.form-control {
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-32);
+  gap: var(--space-40);
   max-width: 1000px;
   margin: 0 auto;
 }
