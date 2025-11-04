@@ -1905,7 +1905,12 @@ select.form-control {
   
   .problem-solution-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-20);
+    gap: var(--space-32);
+  }
+  
+  .problem-card,
+  .solution-card {
+    padding: var(--space-32);
   }
   
   .products-grid {
@@ -1936,7 +1941,17 @@ select.form-control {
   .problem-solution,
   .pricing-packages,
   .faq-section {
-    padding: 3rem 0;
+    padding: 3.5rem 0;
+  }
+  
+  .products-grid,
+  .packages-grid {
+    gap: var(--space-24);
+  }
+  
+  .product-card,
+  .package-card {
+    padding: var(--space-32);
   }
 
   .feature-detailed-card {
@@ -1976,7 +1991,7 @@ select.form-control {
   .package-card,
   .problem-card,
   .solution-card {
-    padding: var(--space-16);
+    padding: var(--space-24);
   }
   
   .contact-content {
@@ -1993,11 +2008,15 @@ select.form-control {
   }
 
   .products-grid {
-    gap: var(--space-20);
+    gap: var(--space-24);
   }
 
   .product-card {
-    padding: var(--space-20);
+    padding: var(--space-24);
+  }
+  
+  .problem-solution-grid {
+    gap: var(--space-24);
   }
 
   .feature-detailed-icon {
@@ -2284,7 +2303,7 @@ select.form-control {
 
 /* Breadcrumb */
 .breadcrumb-section {
-  padding: var(--space-24) 0;
+  padding: var(--space-32) 0;
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
 }
@@ -2591,7 +2610,7 @@ select.form-control {
 
 /* Hero Section Modern */
 .page-hero--modern {
-  padding: var(--space-64) 0;
+  padding: var(--space-80) 0;
 }
 
 .page-hero-content--centered {
@@ -2604,14 +2623,14 @@ select.form-control {
   display: inline-flex;
   align-items: center;
   gap: var(--space-8);
-  padding: var(--space-8) var(--space-20);
+  padding: var(--space-10) var(--space-24);
   background: rgba(var(--color-teal-500-rgb), 0.1);
   border: 1px solid rgba(var(--color-teal-500-rgb), 0.2);
   border-radius: var(--radius-full);
   color: var(--color-primary);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-24);
+  margin-bottom: var(--space-32);
 }
 
 .hero-badge svg {
@@ -2622,9 +2641,9 @@ select.form-control {
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: var(--space-48);
-  margin-top: var(--space-32);
-  padding-top: var(--space-32);
+  gap: var(--space-64);
+  margin-top: var(--space-40);
+  padding-top: var(--space-40);
   border-top: 1px solid rgba(var(--color-brown-600-rgb), 0.15);
 }
 
@@ -2722,8 +2741,8 @@ select.form-control {
 .case-study-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-24);
-  margin-bottom: var(--space-32);
+  gap: var(--space-40);
+  margin-bottom: var(--space-48);
 }
 
 .case-study-section {
@@ -2775,7 +2794,7 @@ select.form-control {
 /* Problem/Solution Sections */
 .case-study-section--problem {
   background: rgba(239, 68, 68, 0.05);
-  padding: var(--space-32);
+  padding: var(--space-48);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(239, 68, 68, 0.2);
   border-left: 4px solid rgb(239, 68, 68);
@@ -2783,7 +2802,7 @@ select.form-control {
 
 .case-study-section--solution {
   background: rgba(34, 197, 94, 0.05);
-  padding: var(--space-32);
+  padding: var(--space-48);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(34, 197, 94, 0.2);
   border-left: 4px solid rgb(34, 197, 94);
@@ -2814,11 +2833,12 @@ select.form-control {
 }
 
 .case-study-section ul li {
-  padding-left: var(--space-24);
-  margin-bottom: var(--space-12);
+  padding-left: var(--space-32);
+  margin-bottom: var(--space-16);
   position: relative;
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-base);
 }
 
 .case-study-section ul li::before {
@@ -2837,7 +2857,7 @@ select.form-control {
 .case-study-section h3 {
   font-size: var(--font-size-xl);
   color: var(--color-text);
-  margin-bottom: var(--space-24);
+  margin-bottom: var(--space-32);
   font-weight: var(--font-weight-bold);
   display: flex;
   align-items: center;
@@ -2959,8 +2979,8 @@ select.form-control {
 .technical-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--space-24);
-  margin-top: var(--space-32);
+  gap: var(--space-32);
+  margin-top: var(--space-40);
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
@@ -2969,7 +2989,7 @@ select.form-control {
 .technical-item {
   display: flex;
   gap: var(--space-16);
-  padding: var(--space-20);
+  padding: var(--space-24);
   background: var(--color-surface);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
@@ -3143,8 +3163,16 @@ select.form-control {
   }
   
   .case-study-card {
-    padding: var(--space-24);
-    margin-bottom: var(--space-40);
+    padding: var(--space-32);
+    margin-bottom: var(--space-48);
+  }
+  
+  .case-study-card-preview {
+    padding: var(--space-32);
+  }
+  
+  .case-studies-grid-overview {
+    gap: var(--space-32);
   }
   
   .case-study-header h2 {
@@ -3158,7 +3186,15 @@ select.form-control {
   
   .case-study-section--problem,
   .case-study-section--solution {
-    padding: var(--space-20);
+    padding: var(--space-32);
+  }
+  
+  .case-study-detail-section {
+    padding: var(--space-64) 0;
+  }
+  
+  .case-study-detail-header {
+    padding-bottom: var(--space-48);
   }
   
   .metrics-grid {
@@ -3167,7 +3203,11 @@ select.form-control {
   }
   
   .metric-card--modern {
-    padding: var(--space-20);
+    padding: var(--space-24);
+  }
+  
+  .case-study-metrics--modern {
+    padding: var(--space-48);
   }
   
   .metric-value {
@@ -3251,7 +3291,16 @@ select.form-control {
   }
   
   .detail-cta {
-    padding: var(--space-32);
+    padding: var(--space-40);
+  }
+  
+  .case-study-section--problem,
+  .case-study-section--solution {
+    padding: var(--space-24);
+  }
+  
+  .case-study-card-preview {
+    padding: var(--space-24);
   }
   
   .cta-buttons {
