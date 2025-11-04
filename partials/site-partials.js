@@ -42,7 +42,6 @@ window.SITE_PARTIALS = window.SITE_PARTIALS || {
     '        <p class="partners-title">Zaufani partnerzy wdro&#380;eniowi ERPNext w Polsce:</p>',
     '        <a href="https://www.erptech.pl" target="_blank" rel="noopener" class="partners-link partners-link--with-logo">',
     '          <img src="./pict/erptech_logo.png" alt="ERPtech logo" class="partners-logo" onerror="this.onerror=null;this.src=\'./pict/logo_nowe__.png\';" loading="lazy" />',
-    '          <span>www.erptech.pl</span>',
     '        </a>',
     '      </div>',
     '    </div>',

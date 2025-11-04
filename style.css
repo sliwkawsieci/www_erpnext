@@ -873,6 +873,7 @@ select.form-control {
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
+  justify-content: center;
 }
 
 .hero-actions .btn {
@@ -950,6 +951,7 @@ select.form-control {
 .page-hero-content {
   max-width: 900px;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* Ensure page-hero content is above background image */
