@@ -40,14 +40,17 @@ function injectMatomoScripts() {
   // Initialize Matomo tracker
   var _paq = window._paq = window._paq || [];
   
-  // Tracker methods
-  _paq.push(['trackPageView']);
+  // Tracker methods - called before trackPageView
   _paq.push(['enableLinkTracking']);
+  _paq.push(['setDocumentTitle', document.domain + '/' + document.title]);
   
-  // Configuration
-  var u = '//www.vh13224.vh.net.pl/';
+  // Configuration - HTTPS required for GitHub Pages
+  var u = 'https://www.vh13224.vh.net.pl/';
   _paq.push(['setTrackerUrl', u + 'matomo.php']);
-  _paq.push(['setSiteId', '1']);
+  _paq.push(['setSiteId', '2']);
+  
+  // Track page view after configuration
+  _paq.push(['trackPageView']);
   
   // Load Matomo script
   var d = document;
@@ -55,9 +58,20 @@ function injectMatomoScripts() {
   var s = d.getElementsByTagName('script')[0];
   g.async = true;
   g.src = u + 'matomo.js';
+  
+  // Error handling for cross-domain issues
+  g.onerror = function() {
+    console.warn('[Matomo] Failed to load script from', u);
+    console.warn('[Matomo] Check CORS settings on Matomo server');
+  };
+  
+  g.onload = function() {
+    console.info('[Matomo] Script loaded successfully');
+  };
+  
   s.parentNode.insertBefore(g, s);
   
-  console.info('[Matomo] Loaded and initialized');
+  console.info('[Matomo] Initialized with URL:', u);
 }
 
 // Minimal JS for multi-page version: load shared partials, form validation, mobile nav, external links
