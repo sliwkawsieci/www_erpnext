@@ -32,9 +32,38 @@ function injectGA4Scripts() {
   };
 }
 
+/* Matomo Analytics - Dynamic Injection */
+function injectMatomoScripts() {
+  // Skip if already loaded
+  if (window._paq) return;
+  
+  // Initialize Matomo tracker
+  var _paq = window._paq = window._paq || [];
+  
+  // Tracker methods
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  
+  // Configuration
+  var u = '//www.vh13224.vh.net.pl/';
+  _paq.push(['setTrackerUrl', u + 'matomo.php']);
+  _paq.push(['setSiteId', '1']);
+  
+  // Load Matomo script
+  var d = document;
+  var g = d.createElement('script');
+  var s = d.getElementsByTagName('script')[0];
+  g.async = true;
+  g.src = u + 'matomo.js';
+  s.parentNode.insertBefore(g, s);
+  
+  console.info('[Matomo] Loaded and initialized');
+}
+
 // Minimal JS for multi-page version: load shared partials, form validation, mobile nav, external links
 document.addEventListener('DOMContentLoaded', function () {
   injectGA4Scripts(); // Load GA4 dynamically
+  injectMatomoScripts(); // Load Matomo dynamically
   injectSharedPartials();
   // Delay mobile nav setup to ensure partials are injected
   setTimeout(function() {
@@ -333,10 +362,29 @@ function setupGA4Events() {
     }
   }
 
+  // Helper function to send Matomo event
+  function sendMatomoEvent(category, action, name, value) {
+    if (window._paq) {
+      window._paq.push(['trackEvent', category, action, name, value]);
+      console.info('[Matomo]', category, action, name);
+    }
+  }
+
+  // Combined event sender
+  function sendAnalyticsEvent(eventName, params) {
+    sendGA4Event(eventName, params);
+    
+    // Map GA4 events to Matomo format
+    var category = eventName.replace('_', ' ');
+    var action = params.button_text || params.product_name || params.form_name || 'click';
+    var name = params.button_location || params.link_url || '';
+    sendMatomoEvent(category, action, name);
+  }
+
   // Track CTA buttons - "Umów darmową konsultację"
   document.querySelectorAll('[data-action="contact"]').forEach(function(btn) {
     btn.addEventListener('click', function() {
-      sendGA4Event('cta_click', {
+      sendAnalyticsEvent('cta_click', {
         button_text: 'Umów darmową konsultację',
         button_location: 'hero_section'
       });
@@ -346,7 +394,7 @@ function setupGA4Events() {
   // Track "Zobacz moduły" buttons
   document.querySelectorAll('a[href="erpnext.html"]').forEach(function(link) {
     link.addEventListener('click', function() {
-      sendGA4Event('cta_click', {
+      sendAnalyticsEvent('cta_click', {
         button_text: link.textContent.trim(),
         button_location: 'hero_section',
         link_url: 'erpnext.html'
@@ -358,7 +406,7 @@ function setupGA4Events() {
   document.querySelectorAll('.product-card .btn[data-page]').forEach(function(btn) {
     btn.addEventListener('click', function() {
       const productName = btn.getAttribute('data-page');
-      sendGA4Event('product_click', {
+      sendAnalyticsEvent('product_click', {
         product_name: productName,
         button_text: btn.textContent.trim()
       });
@@ -369,7 +417,7 @@ function setupGA4Events() {
   document.querySelectorAll('a[href="crm.html"], a[href="helpdesk.html"]').forEach(function(link) {
     link.addEventListener('click', function() {
       const page = link.getAttribute('href').replace('.html', '');
-      sendGA4Event('product_click', {
+      sendAnalyticsEvent('product_click', {
         product_name: page,
         button_text: link.textContent.trim(),
         link_url: link.getAttribute('href')
@@ -381,7 +429,7 @@ function setupGA4Events() {
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', function() {
-      sendGA4Event('form_submit', {
+      sendAnalyticsEvent('form_submit', {
         form_name: 'contact_form',
         form_location: 'contact_section'
       });
@@ -391,7 +439,7 @@ function setupGA4Events() {
   // Track case study clicks
   document.querySelectorAll('a[href^="case-study-"]').forEach(function(link) {
     link.addEventListener('click', function() {
-      sendGA4Event('case_study_click', {
+      sendAnalyticsEvent('case_study_click', {
         case_study: link.getAttribute('href').replace('.html', ''),
         button_text: link.textContent.trim()
       });
