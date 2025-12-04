@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setupBackToTop();
   setupGA4Events();
   setupCookieConsent();
+  setupFAQAccordion();
   hidePreloader();
 });
 
@@ -553,4 +554,53 @@ function getCookie(name) {
     if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
   }
   return null;
+}
+
+/* FAQ Accordion */
+function setupFAQAccordion() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  if (!faqQuestions.length) return;
+  
+  faqQuestions.forEach(function(question) {
+    question.addEventListener('click', function() {
+      const faqItem = this.parentElement;
+      const faqAnswer = faqItem.querySelector('.faq-answer');
+      const faqIcon = this.querySelector('.faq-icon');
+      const isActive = faqItem.classList.contains('active');
+      
+      // Close all other FAQ items
+      document.querySelectorAll('.faq-item').forEach(function(item) {
+        item.classList.remove('active');
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.faq-icon');
+        if (answer) {
+          answer.style.maxHeight = '0px';
+          answer.style.opacity = '0';
+        }
+        if (icon) {
+          icon.textContent = '+';
+        }
+      });
+      
+      // Toggle current item
+      if (!isActive) {
+        faqItem.classList.add('active');
+        faqAnswer.style.maxHeight = faqAnswer.scrollHeight + 'px';
+        faqAnswer.style.opacity = '1';
+        faqIcon.textContent = '−';
+      }
+    });
+  });
+  
+  // Initialize closed state
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    const answer = item.querySelector('.faq-answer');
+    if (answer) {
+      answer.style.maxHeight = '0px';
+      answer.style.opacity = '0';
+      answer.style.overflow = 'hidden';
+      answer.style.transition = 'max-height 0.3s ease, opacity 0.3s ease';
+    }
+  });
 }
