@@ -1,6 +1,26 @@
-/* Google Analytics 4 - Dynamic Injection */
+/* Google Analytics 4 - Dynamic Injection (Basic Consent Mode)
+ * Zgodnie z wytycznymi Google: tag GA4 jest ładowany DOPIERO po wyrażeniu zgody.
+ * Przed zgodą - brak ładowania skryptu GA4.
+ * Po zgodzie - ładowanie i włączenie zbierania danych.
+ */
 function injectGA4Scripts() {
   // Skip if already loaded
+  if (window.gtagLoaded) return;
+  
+  // W trybie podstawowym: NIE ładuj GA4 dopóki użytkownik nie wyrazi zgody
+  // Sprawdź czy użytkownik już wyraził zgodę
+  const consent = getCookie('ga_cookie_consent');
+  if (consent !== 'accepted') {
+    console.info('[GA4] Oczekiwanie na zgodę użytkownika - tag nie zostanie załadowany');
+    return;
+  }
+  
+  // Użytkownik wyraził zgodę - ładuj GA4
+  loadGA4WithConsent();
+}
+
+/* Ładowanie GA4 po wyrażeniu zgody */
+function loadGA4WithConsent() {
   if (window.gtagLoaded) return;
   
   // Initialize dataLayer
@@ -8,13 +28,12 @@ function injectGA4Scripts() {
   function gtag(){dataLayer.push(arguments);}
   window.gtag = gtag; // Make gtag globally available
   
-  // Set default consent (GDPR/RODO compliant)
+  // Ustaw zgodę jako granted (użytkownik już zaakceptował)
   gtag('consent', 'default', {
-    'analytics_storage': 'denied',
+    'analytics_storage': 'granted',
     'ad_storage': 'denied',
     'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'wait_for_update': 500
+    'ad_personalization': 'denied'
   });
   
   // Load gtag.js script
@@ -28,7 +47,7 @@ function injectGA4Scripts() {
     gtag('js', new Date());
     gtag('config', 'G-E6J3XF4YDF');
     window.gtagLoaded = true;
-    console.info('[GA4] Loaded and initialized');
+    console.info('[GA4] Załadowano i zainicjalizowano po zgodzie użytkownika');
   };
 }
 
@@ -494,18 +513,19 @@ function setupCookieConsent() {
     banner.classList.add('visible');
   }, 500);
 
-  // Accept button
+  // Accept button - ładuj GA4 dopiero po zgodzie (Basic Consent Mode)
   document.getElementById('acceptCookies').addEventListener('click', function() {
     setCookie(COOKIE_NAME, 'accepted', COOKIE_EXPIRY_DAYS);
-    enableGA4();
+    loadGA4WithConsent(); // Załaduj GA4 dopiero teraz
     hideBanner();
+    console.info('[Cookie Consent] Zgoda wyrażona - Google Analytics załadowany');
   });
 
-  // Reject button
+  // Reject button - GA4 nie zostanie załadowany
   document.getElementById('rejectCookies').addEventListener('click', function() {
     setCookie(COOKIE_NAME, 'rejected', COOKIE_EXPIRY_DAYS);
-    disableGA4();
     hideBanner();
+    console.info('[Cookie Consent] Zgoda odrzucona - Google Analytics nie zostanie załadowany');
   });
 
   function hideBanner() {
@@ -513,24 +533,6 @@ function setupCookieConsent() {
     setTimeout(function() {
       banner.remove();
     }, 300);
-  }
-
-  function enableGA4() {
-    if (typeof gtag === 'function') {
-      gtag('consent', 'update', {
-        'analytics_storage': 'granted'
-      });
-      console.info('[Cookie Consent] Google Analytics enabled');
-    }
-  }
-
-  function disableGA4() {
-    if (typeof gtag === 'function') {
-      gtag('consent', 'update', {
-        'analytics_storage': 'denied'
-      });
-      console.info('[Cookie Consent] Google Analytics disabled');
-    }
   }
 }
 
