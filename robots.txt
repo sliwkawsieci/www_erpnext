@@ -1,5 +1,5 @@
 # Robots.txt for erpnext.pl
-# Allow all search engines to crawl all content
+# Allow all search engines and AI crawlers to access content
 
 User-agent: *
 Allow: /
@@ -7,6 +7,32 @@ Allow: /
 # Sitemap location
 Sitemap: https://erpnext.pl/sitemap.xml
 
-# Disallow admin/system paths (if any)
+# LLM/AI context file
+# See: https://erpnext.pl/llms.txt
+
+# Allow AI crawlers explicitly
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Disallow admin/system paths
 Disallow: /partials/
 Disallow: /scripts/
+Disallow: /.vscode/
