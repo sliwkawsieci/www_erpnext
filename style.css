@@ -1282,6 +1282,7 @@ select.form-control {
   gap: var(--space-32);
   max-width: 1200px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
 .package-card {
@@ -1292,6 +1293,13 @@ select.form-control {
   text-align: center;
   transition: all var(--duration-normal) var(--ease-standard);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.package-card .btn {
+  margin-top: auto;
 }
 
 .package-card:hover {
