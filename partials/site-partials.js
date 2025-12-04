@@ -15,6 +15,7 @@ window.SITE_PARTIALS = window.SITE_PARTIALS || {
     '            <div class="nav-dropdown">',
     '              <a href="produkcja.html" data-nav="produkcja">Produkcja</a>',
     '              <a href="magazyn.html" data-nav="magazyn">Magazyn</a>',
+    '              <a href="projekty.html" data-nav="projekty">Projekty i Czas Pracy</a>',
     '              <a href="crm.html" data-nav="crm">CRM</a>',
     '              <a href="helpdesk.html" data-nav="helpdesk">Helpdesk</a>',
     '            </div>',

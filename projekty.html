@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rozliczanie Czasu Pracy - Program do Fakturowania Godzin | ERPNext.pl</title>
+  <link rel="icon" href="pict/logo_nowe__.png" type="image/png" />
+  <meta name="description" content="ERPNext do rozliczania czasu pracy i fakturowania godzin. Idealny dla kancelarii prawnych, firm konsultingowych i agencji. Automatyczne zestawienia i faktury za przepracowane godziny." />
+  <meta name="keywords" content="rozliczanie czasu pracy, program do fakturowania godzin, timesheet, ewidencja czasu pracy, fakturowanie godzin, program dla kancelarii prawnej, rozliczanie projektów, automatyczne faktury" />
+  <link rel="canonical" href="https://erpnext.pl/projekty.html" />
+  <link rel="stylesheet" href="style.css?v=20251104b" />
+  
+  <!-- JSON-LD Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Rozliczanie Czasu Pracy i Fakturowanie Godzin w ERPNext",
+    "description": "Jak automatycznie rozliczać czas pracy i generować faktury za przepracowane godziny. Przykład wdrożenia w kancelarii prawnej.",
+    "author": {
+      "@type": "Organization",
+      "name": "ERPNext.pl"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ERPNext.pl",
+      "url": "https://erpnext.pl"
+    },
+    "mainEntityOfPage": "https://erpnext.pl/projekty.html",
+    "datePublished": "2024-12-04",
+    "dateModified": "2024-12-04"
+  }
+  </script>
+</head>
+<body>
+  <div class="page-preloader">
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <div data-partial="header"></div>
+  <main class="main-content">
+
+  <section class="page-hero">
+    <div class="hero-background">
+      <img src="pict/hero_office.png" alt="Rozliczanie czasu pracy w ERPNext" class="hero-bg-image" loading="lazy" decoding="async">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="page-hero-content">
+        <h1>Rozliczanie Czasu Pracy i Fakturowanie Godzin</h1>
+        <p class="page-hero-subtitle">ERPNext automatyzuje ewidencję czasu pracy, rozliczanie projektów i generowanie faktur za przepracowane godziny. Idealny dla kancelarii prawnych, firm konsultingowych i agencji.</p>
+      </div>
+    </div>
+  </section>
+
+  <article class="article-content">
+    <div class="container">
+      
+      <section class="article-section">
+        <h2>Dla kogo jest moduł Projekty i Timesheet?</h2>
+        <p>Moduł rozliczania czasu pracy w ERPNext jest idealny dla firm, które fakturują klientów na podstawie przepracowanych godzin:</p>
+        
+        <ul>
+          <li><strong>Kancelarie prawne</strong> - rozliczanie godzin prawników na sprawy klientów</li>
+          <li><strong>Firmy konsultingowe</strong> - ewidencja czasu konsultantów na projektach</li>
+          <li><strong>Agencje marketingowe</strong> - śledzenie czasu na kampanie i projekty</li>
+          <li><strong>Biura rachunkowe</strong> - rozliczanie usług księgowych</li>
+          <li><strong>Firmy IT</strong> - fakturowanie za godziny programistów i wsparcia</li>
+          <li><strong>Architekci i projektanci</strong> - rozliczanie projektów godzinowo</li>
+        </ul>
+      </section>
+
+      <section class="article-section">
+        <h2>Przykład: Kancelaria Prawna</h2>
+        <p>Zobaczmy, jak <strong>kancelaria prawna</strong> może wykorzystać ERPNext do automatycznego rozliczania czasu pracy i fakturowania klientów.</p>
+        
+        <div class="feature-highlight">
+          <h3>Scenariusz wdrożenia</h3>
+          <p>Kancelaria prawna zatrudnia 5 prawników, którzy pracują nad sprawami różnych klientów. Każdy prawnik ma inną stawkę godzinową (od 200 do 500 zł/h). Kancelaria potrzebuje:</p>
+          <ul>
+            <li>Ewidencji czasu pracy każdego prawnika na poszczególne sprawy</li>
+            <li>Automatycznego generowania zestawień dla klientów</li>
+            <li>Faktur z wyszczególnieniem przepracowanych godzin</li>
+            <li>Raportów rentowności spraw i prawników</li>
+          </ul>
+        </div>
+
+        <h3>Jak to działa w ERPNext?</h3>
+        <ol>
+          <li><strong>Tworzenie projektu (sprawy)</strong>
+            <p>Każda sprawa klienta to osobny projekt w ERPNext. Projekt zawiera: dane klienta, typ sprawy, budżet godzinowy, termin.</p>
+          </li>
+          <li><strong>Rejestrowanie czasu (Timesheet)</strong>
+            <p>Prawnicy rejestrują czas pracy przez prosty formularz lub aplikację mobilną. Każdy wpis zawiera: datę, czas rozpoczęcia i zakończenia, opis wykonanych czynności, przypisanie do sprawy.</p>
+          </li>
+          <li><strong>Automatyczna kalkulacja</strong>
+            <p>System automatycznie mnoży przepracowane godziny przez stawkę prawnika i sumuje koszty dla każdej sprawy.</p>
+          </li>
+          <li><strong>Generowanie zestawienia</strong>
+            <p>Jednym kliknięciem generujesz szczegółowe zestawienie dla klienta: lista czynności, daty, czas, stawki, kwoty.</p>
+          </li>
+          <li><strong>Automatyczna faktura</strong>
+            <p>Z zestawienia tworzysz fakturę VAT z wyszczególnieniem usług lub jako kwota zbiorcza.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="article-section">
+        <h2>Kluczowe funkcje rozliczania czasu</h2>
+        
+        <div class="feature-highlight">
+          <h3>Timesheet - Ewidencja Czasu Pracy</h3>
+          <ul>
+            <li><strong>Prosty formularz</strong> - szybkie wprowadzanie czasu z opisem czynności</li>
+            <li><strong>Timer</strong> - automatyczne mierzenie czasu z możliwością pauzy</li>
+            <li><strong>Aplikacja mobilna</strong> - rejestracja czasu z telefonu</li>
+            <li><strong>Zatwierdzanie</strong> - workflow akceptacji przez przełożonego</li>
+            <li><strong>Korekty</strong> - możliwość edycji przed zatwierdzeniem</li>
+          </ul>
+        </div>
+
+        <div class="feature-highlight">
+          <h3>Stawki i Rozliczenia</h3>
+          <ul>
+            <li><strong>Stawki pracowników</strong> - indywidualna stawka godzinowa dla każdego</li>
+            <li><strong>Stawki projektowe</strong> - różne stawki dla różnych klientów/projektów</li>
+            <li><strong>Stawki za nadgodziny</strong> - automatyczne przeliczanie</li>
+            <li><strong>Waluta</strong> - rozliczenia w PLN, EUR, USD</li>
+            <li><strong>Zaokrąglanie</strong> - do 15 min, 30 min lub godziny</li>
+          </ul>
+        </div>
+
+        <div class="feature-highlight">
+          <h3>Fakturowanie</h3>
+          <ul>
+            <li><strong>Faktura z timesheetów</strong> - automatyczne tworzenie z zestawienia godzin</li>
+            <li><strong>Szczegółowa specyfikacja</strong> - lista czynności na fakturze</li>
+            <li><strong>Faktura zbiorcza</strong> - jedna pozycja "Usługi prawne"</li>
+            <li><strong>Faktury cykliczne</strong> - automatyczne miesięczne rozliczenia</li>
+            <li><strong>Integracja z KSeF</strong> - automatyczna wysyłka do systemu e-Faktur</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>Zarządzanie Projektami</h2>
+        <p>Moduł projektów w ERPNext to nie tylko rozliczanie czasu, ale pełne zarządzanie projektami:</p>
+        
+        <ul>
+          <li><strong>Struktura projektu</strong> - zadania, podzadania, kamienie milowe</li>
+          <li><strong>Wykresy Gantta</strong> - wizualizacja harmonogramu</li>
+          <li><strong>Budżetowanie</strong> - planowany vs rzeczywisty czas i koszt</li>
+          <li><strong>Alerty</strong> - powiadomienia o przekroczeniu budżetu</li>
+          <li><strong>Dokumenty</strong> - załączniki i pliki projektowe</li>
+          <li><strong>Komunikacja</strong> - komentarze i historia zmian</li>
+        </ul>
+      </section>
+
+      <section class="article-section">
+        <h2>Raporty i Analityka</h2>
+        <p>ERPNext dostarcza szczegółowe raporty do analizy rentowności i efektywności:</p>
+        
+        <div class="feature-highlight">
+          <h3>Dostępne raporty:</h3>
+          <ul>
+            <li><strong>Raport godzin pracownika</strong> - ile godzin przepracował każdy pracownik</li>
+            <li><strong>Raport godzin projektu</strong> - ile godzin pochłonął każdy projekt</li>
+            <li><strong>Rentowność projektów</strong> - przychody vs koszty</li>
+            <li><strong>Wykorzystanie pracowników</strong> - % czasu fakturowanego</li>
+            <li><strong>Niezafakturowane godziny</strong> - czas do rozliczenia</li>
+            <li><strong>Porównanie budżet vs realizacja</strong> - kontrola kosztów</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>Korzyści dla Twojej Firmy</h2>
+        
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <h3>⏱️ Oszczędność czasu</h3>
+            <p>Automatyczne generowanie zestawień i faktur zamiast ręcznego przepisywania godzin.</p>
+          </div>
+          <div class="benefit-item">
+            <h3>💰 Więcej przychodów</h3>
+            <p>Żadna przepracowana godzina nie zostanie pominięta przy fakturowaniu.</p>
+          </div>
+          <div class="benefit-item">
+            <h3>📊 Pełna kontrola</h3>
+            <p>Wiesz dokładnie, ile czasu pochłania każdy projekt i klient.</p>
+          </div>
+          <div class="benefit-item">
+            <h3>😊 Zadowoleni klienci</h3>
+            <p>Przejrzyste zestawienia budują zaufanie i eliminują spory o rozliczenia.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>Integracja z innymi modułami</h2>
+        <p>Moduł Projekty i Timesheet jest w pełni zintegrowany z resztą ERPNext:</p>
+        
+        <ul>
+          <li><strong>CRM</strong> - projekty powiązane z szansami sprzedaży i klientami</li>
+          <li><strong>Księgowość</strong> - automatyczne księgowanie przychodów i kosztów</li>
+          <li><strong>HR</strong> - integracja z listą płac i urlopami</li>
+          <li><strong>Helpdesk</strong> - śledzenie czasu na zgłoszenia serwisowe</li>
+        </ul>
+      </section>
+
+      <section class="article-section cta-section">
+        <h2>Zacznij rozliczać czas efektywnie</h2>
+        <p>Skontaktuj się z nami, aby zobaczyć demo rozliczania czasu pracy w ERPNext. Pokażemy, jak zautomatyzować fakturowanie godzin w Twojej firmie.</p>
+        <div class="cta-buttons">
+          <a class="btn btn--primary btn--lg" href="index.html#contact-form">Umów darmowe demo</a>
+          <a class="btn btn--outline btn--lg" href="wdrozenie-erpnext.html">Zobacz proces wdrożenia</a>
+        </div>
+      </section>
+
+    </div>
+  </article>
+
+  </main>
+  
+  <div data-partial="footer"></div>
+  <script src="partials/site-partials.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
