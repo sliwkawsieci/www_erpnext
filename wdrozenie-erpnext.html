@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wdrożenie ERPNext - Integracja z KSeF Krok po Kroku | ERPNext.pl</title>
+  <link rel="icon" href="pict/logo_nowe__.png" type="image/png" />
+  <meta name="description" content="Jak wdrożyć ERPNext w firmie? Kompletny przewodnik wdrożenia systemu ERP. Integracja ERPNext z KSeF krok po kroku. ERP open source dla małych firm usługowych." />
+  <meta name="keywords" content="wdrożenie ERPNext, integracja ERPNext z KSeF, ERPNext integracja z KSeF krok po kroku, ERP open source dla małych firm usługowych, jak wdrożyć ERPNext, migracja do ERPNext" />
+  <link rel="canonical" href="https://erpnext.pl/wdrozenie-erpnext.html" />
+  <link rel="stylesheet" href="style.css?v=20251104b" />
+  
+  <!-- JSON-LD Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Jak wdrożyć ERPNext w firmie - Kompletny Przewodnik",
+    "description": "Szczegółowy przewodnik wdrożenia ERPNext z integracją KSeF. Dla firm produkcyjnych, usługowych i handlowych.",
+    "author": {
+      "@type": "Organization",
+      "name": "ERPNext.pl"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ERPNext.pl",
+      "url": "https://erpnext.pl"
+    },
+    "mainEntityOfPage": "https://erpnext.pl/wdrozenie-erpnext.html",
+    "datePublished": "2024-12-04",
+    "dateModified": "2024-12-04"
+  }
+  </script>
+  
+  <!-- JSON-LD HowTo Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Jak wdrożyć ERPNext w firmie produkcyjnej?",
+    "description": "Przewodnik krok po kroku wdrożenia systemu ERPNext w firmie.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Analiza wymagań",
+        "text": "Przeprowadź analizę procesów biznesowych i zdefiniuj wymagania dla systemu ERP."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Konfiguracja systemu",
+        "text": "Skonfiguruj ERPNext zgodnie z potrzebami firmy: struktura organizacyjna, użytkownicy, uprawnienia."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Migracja danych",
+        "text": "Zaimportuj dane z Excel lub poprzedniego systemu: kontrahenci, produkty, stany magazynowe."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Integracja z KSeF",
+        "text": "Skonfiguruj integrację z Krajowym Systemem e-Faktur dla automatycznej wysyłki faktur."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Szkolenie użytkowników",
+        "text": "Przeszkol zespół z obsługi systemu i nowych procesów."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Go-live i wsparcie",
+        "text": "Uruchom system produkcyjnie z wsparciem technicznym."
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="page-preloader">
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <div data-partial="header"></div>
+  <main class="main-content">
+
+  <section class="page-hero">
+    <div class="hero-background">
+      <img src="pict/hero_office.png" alt="Wdrożenie ERPNext" class="hero-bg-image" loading="lazy" decoding="async">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="page-hero-content">
+        <h1>Wdrożenie ERPNext - Kompletny Przewodnik</h1>
+        <p class="page-hero-subtitle">Jak wdrożyć ERPNext w firmie produkcyjnej, usługowej lub handlowej? Poznaj proces wdrożenia i integrację z KSeF krok po kroku.</p>
+      </div>
+    </div>
+  </section>
+
+  <article class="article-content">
+    <div class="container">
+      
+      <section class="article-section">
+        <h2>Jak wdrożyć ERPNext w firmie produkcyjnej?</h2>
+        <p>Wdrożenie ERPNext to proces, który przy odpowiednim wsparciu można zrealizować w 2-8 tygodni. Czas zależy od złożoności firmy i zakresu funkcjonalności.</p>
+        
+        <div class="feature-highlight">
+          <h3>Etapy wdrożenia ERPNext:</h3>
+          <ol>
+            <li><strong>Analiza wymagań (1-2 tygodnie)</strong>
+              <ul>
+                <li>Mapowanie procesów biznesowych</li>
+                <li>Identyfikacja kluczowych funkcjonalności</li>
+                <li>Planowanie integracji z innymi systemami</li>
+              </ul>
+            </li>
+            <li><strong>Konfiguracja systemu (1-2 tygodnie)</strong>
+              <ul>
+                <li>Struktura organizacyjna i centra kosztów</li>
+                <li>Konfiguracja modułów (sprzedaż, zakupy, magazyn, produkcja)</li>
+                <li>Ustawienie uprawnień użytkowników</li>
+              </ul>
+            </li>
+            <li><strong>Migracja danych (1-2 tygodnie)</strong>
+              <ul>
+                <li>Import kontrahentów i produktów</li>
+                <li>Migracja stanów magazynowych</li>
+                <li>Przeniesienie historii transakcji (opcjonalnie)</li>
+              </ul>
+            </li>
+            <li><strong>Szkolenia (3-5 dni)</strong>
+              <ul>
+                <li>Szkolenie administratorów</li>
+                <li>Szkolenie użytkowników końcowych</li>
+                <li>Materiały szkoleniowe i dokumentacja</li>
+              </ul>
+            </li>
+            <li><strong>Go-live i wsparcie</strong>
+              <ul>
+                <li>Uruchomienie produkcyjne</li>
+                <li>Wsparcie w pierwszych tygodniach</li>
+                <li>Optymalizacja procesów</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>ERPNext Integracja z KSeF Krok po Kroku</h2>
+        <p><strong>Integracja ERPNext z KSeF</strong> (Krajowym Systemem e-Faktur) jest kluczowa dla polskich firm. ERPNext obsługuje wysyłkę i odbieranie faktur ustrukturyzowanych.</p>
+        
+        <div class="feature-highlight">
+          <h3>Konfiguracja integracji z KSeF:</h3>
+          <ol>
+            <li><strong>Uzyskanie tokena KSeF</strong>
+              <p>Wygeneruj token autoryzacyjny w portalu KSeF Ministerstwa Finansów.</p>
+            </li>
+            <li><strong>Instalacja modułu KSeF</strong>
+              <p>Zainstaluj dedykowany moduł integracji KSeF dla ERPNext.</p>
+            </li>
+            <li><strong>Konfiguracja połączenia</strong>
+              <p>Wprowadź NIP firmy i token autoryzacyjny w ustawieniach ERPNext.</p>
+            </li>
+            <li><strong>Mapowanie pól</strong>
+              <p>Skonfiguruj mapowanie pól faktury ERPNext na strukturę XML KSeF.</p>
+            </li>
+            <li><strong>Testowanie</strong>
+              <p>Przetestuj wysyłkę faktur w środowisku testowym KSeF.</p>
+            </li>
+            <li><strong>Uruchomienie produkcyjne</strong>
+              <p>Przełącz na środowisko produkcyjne KSeF.</p>
+            </li>
+          </ol>
+        </div>
+        
+        <p><strong>Funkcje integracji KSeF w ERPNext:</strong></p>
+        <ul>
+          <li>Automatyczna wysyłka faktur sprzedaży do KSeF</li>
+          <li>Pobieranie numerów KSeF i zapisywanie w fakturze</li>
+          <li>Odbieranie faktur zakupu z KSeF</li>
+          <li>Walidacja danych przed wysyłką</li>
+          <li>Obsługa korekt i duplikatów</li>
+        </ul>
+      </section>
+
+      <section class="article-section">
+        <h2>ERP Open Source dla Małych Firm Usługowych</h2>
+        <p>ERPNext to idealny <strong>ERP open source dla małych firm usługowych</strong>. Bez opłat licencyjnych, z pełną funkcjonalnością potrzebną do zarządzania firmą usługową.</p>
+        
+        <div class="feature-highlight">
+          <h3>Funkcje dla firm usługowych:</h3>
+          <ul>
+            <li><strong>Zarządzanie projektami</strong> - planowanie, budżetowanie, śledzenie czasu</li>
+            <li><strong>Fakturowanie usług</strong> - faktury godzinowe, ryczałtowe, abonamentowe</li>
+            <li><strong>CRM</strong> - zarządzanie relacjami z klientami</li>
+            <li><strong>Helpdesk</strong> - obsługa zgłoszeń serwisowych</li>
+            <li><strong>Umowy serwisowe</strong> - SLA, automatyczne faktury</li>
+            <li><strong>Rozliczanie czasu pracy</strong> - timesheets, raporty</li>
+          </ul>
+        </div>
+        
+        <p>Dla małych firm usługowych oferujemy pakiet <strong>Hosting od 39 zł/miesiąc</strong> - bez opłat za użytkowników, z pełną funkcjonalnością.</p>
+      </section>
+
+      <section class="article-section">
+        <h2>Migracja z Excel do ERPNext</h2>
+        <p>Większość firm rozpoczyna od arkuszy Excel. ERPNext oferuje narzędzia do łatwej migracji:</p>
+        
+        <ul>
+          <li><strong>Import CSV/Excel</strong> - wbudowane narzędzie importu</li>
+          <li><strong>Szablony importu</strong> - gotowe szablony dla każdego typu danych</li>
+          <li><strong>Walidacja danych</strong> - sprawdzanie poprawności przed importem</li>
+          <li><strong>Mapowanie pól</strong> - elastyczne dopasowanie kolumn</li>
+          <li><strong>Import przyrostowy</strong> - możliwość importu partiami</li>
+        </ul>
+        
+        <p>Typowa migracja z Excel zajmuje <strong>około tygodnia</strong> i obejmuje: kontrahentów, produkty, cenniki i stany magazynowe.</p>
+      </section>
+
+      <section class="article-section">
+        <h2>Koszt Wdrożenia ERPNext</h2>
+        <p>ERPNext to system open source - <strong>sam software jest darmowy</strong>. Koszty wdrożenia obejmują:</p>
+        
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Element</th>
+              <th>Koszt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Licencja ERPNext</td>
+              <td><strong>0 zł</strong> (open source)</td>
+            </tr>
+            <tr>
+              <td>Hosting</td>
+              <td>od <strong>39 zł/miesiąc</strong></td>
+            </tr>
+            <tr>
+              <td>Wdrożenie podstawowe</td>
+              <td>od <strong>3 000 zł</strong></td>
+            </tr>
+            <tr>
+              <td>Szkolenia</td>
+              <td>od <strong>1 500 zł</strong></td>
+            </tr>
+            <tr>
+              <td>Integracja KSeF</td>
+              <td>od <strong>2 000 zł</strong></td>
+            </tr>
+            <tr>
+              <td>Wsparcie miesięczne</td>
+              <td>od <strong>699 zł/miesiąc</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="article-section cta-section">
+        <h2>Rozpocznij wdrożenie ERPNext</h2>
+        <p>Skontaktuj się z nami, aby omówić wdrożenie ERPNext w Twojej firmie. Oferujemy darmową konsultację i wycenę projektu.</p>
+        <div class="cta-buttons">
+          <a class="btn btn--primary btn--lg" href="index.html#contact-form">Umów darmową konsultację</a>
+          <a class="btn btn--outline btn--lg" href="wsparcie.html">Zobacz pakiety wsparcia</a>
+        </div>
+      </section>
+
+    </div>
+  </article>
+
+  </main>
+  
+  <div data-partial="footer"></div>
+  <script src="partials/site-partials.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
