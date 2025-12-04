@@ -21,6 +21,7 @@ window.SITE_PARTIALS = window.SITE_PARTIALS || {
     '            </div>',
     '          </li>',
     '          <li><a class="nav-link" data-nav="wdrozenie" href="wdrozenie-erpnext.html">Wdro&#380;enie</a></li>',
+    '          <li><a class="nav-link" data-nav="hosting" href="hosting.html">Hosting</a></li>',
     '          <li><a class="nav-link" data-nav="wsparcie" href="wsparcie.html">Wsparcie</a></li>',
     '          <li><a class="nav-link" data-nav="contact" href="index.html#contact-form">Kontakt</a></li>',
     '        </ul>',
