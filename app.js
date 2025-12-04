@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setupGA4Events();
   setupCookieConsent();
   setupFAQAccordion();
+  setupRegulaminAccordion();
   hidePreloader();
 });
 
@@ -602,5 +603,70 @@ function setupFAQAccordion() {
       answer.style.overflow = 'hidden';
       answer.style.transition = 'max-height 0.3s ease, opacity 0.3s ease';
     }
+  });
+}
+
+/* Regulamin Accordion */
+function setupRegulaminAccordion() {
+  const regulaminToggles = document.querySelectorAll('.regulamin-toggle');
+  
+  if (!regulaminToggles.length) return;
+  
+  regulaminToggles.forEach(function(toggle) {
+    toggle.addEventListener('click', function() {
+      const regulaminItem = this.parentElement;
+      const regulaminContent = regulaminItem.querySelector('.regulamin-content-inner');
+      const regulaminIcon = this.querySelector('.regulamin-icon');
+      const regulaminSection = this.getAttribute('data-regulamin');
+      const isActive = regulaminItem.classList.contains('active');
+      
+      // Toggle current item
+      if (!isActive) {
+        regulaminItem.classList.add('active');
+        regulaminContent.style.maxHeight = regulaminContent.scrollHeight + 'px';
+        regulaminIcon.textContent = '−';
+        
+        // Track regulamin section opening in GA4
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'regulamin_open', {
+            'section': regulaminSection,
+            'page': window.location.pathname
+          });
+        }
+        
+        // Track in Matomo if available
+        if (typeof _paq !== 'undefined') {
+          _paq.push(['trackEvent', 'Regulamin', 'Open Section', regulaminSection]);
+        }
+        
+        console.log('[Analytics] Regulamin section opened:', regulaminSection);
+      } else {
+        regulaminItem.classList.remove('active');
+        regulaminContent.style.maxHeight = '0px';
+        regulaminIcon.textContent = '+';
+        
+        // Track regulamin section closing in GA4
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'regulamin_close', {
+            'section': regulaminSection,
+            'page': window.location.pathname
+          });
+        }
+        
+        // Track in Matomo if available
+        if (typeof _paq !== 'undefined') {
+          _paq.push(['trackEvent', 'Regulamin', 'Close Section', regulaminSection]);
+        }
+        
+        console.log('[Analytics] Regulamin section closed:', regulaminSection);
+      }
+    });
+  });
+  
+  // Initialize closed state
+  document.querySelectorAll('.regulamin-content-inner').forEach(function(content) {
+    content.style.maxHeight = '0px';
+    content.style.overflow = 'hidden';
+    content.style.transition = 'max-height 0.3s ease';
   });
 }
