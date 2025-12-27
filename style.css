@@ -3651,6 +3651,113 @@ select.form-control {
 .feature-highlight ul {
   margin-bottom: 0;
 }
+.icon-list {
+  list-style: none;
+  margin: var(--space-24) 0;
+  padding-left: 0;
+  display: grid;
+  gap: var(--space-16);
+}
+
+.icon-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-12);
+  margin-bottom: 0;
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+}
+
+.icon-list__icon {
+  font-size: 20px;
+  width: 32px;
+  line-height: 1.4;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.problem-solution-grid {
+  display: grid;
+  gap: var(--space-16);
+  margin: var(--space-24) 0;
+}
+
+.problem-solution-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-24);
+}
+
+.problem-solution-card__col {
+  min-width: 0;
+}
+
+.problem-solution-card__problem {
+  padding-right: var(--space-16);
+  border-right: 1px solid rgba(var(--color-teal-500-rgb), 0.2);
+}
+
+.problem-solution-card__solution {
+  padding-left: var(--space-16);
+}
+
+.problem-solution-card h3 {
+  margin-top: 0;
+  margin-bottom: var(--space-8);
+  font-size: var(--font-size-lg);
+}
+
+.problem-solution-card__solution h3 {
+  color: var(--color-primary);
+}
+
+.cta-inline {
+  margin-top: var(--space-24);
+  padding: var(--space-24);
+  background: rgba(var(--color-teal-500-rgb), 0.06);
+  border: 1px solid rgba(var(--color-teal-500-rgb), 0.2);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  flex-wrap: wrap;
+}
+
+.cta-inline p {
+  margin: 0;
+  font-size: var(--font-size-lg);
+}
+
+.cta-inline .btn {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .problem-solution-card {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-solution-card__problem {
+    border-right: none;
+    border-bottom: 1px solid rgba(var(--color-teal-500-rgb), 0.15);
+    padding-right: 0;
+    margin-bottom: var(--space-16);
+  }
+
+  .problem-solution-card__solution {
+    padding-left: 0;
+  }
+
+  .cta-inline {
+    justify-content: center;
+    text-align: center;
+  }
+}
 
 .article-section.cta-section {
   text-align: center;
@@ -4073,3 +4180,4 @@ select.form-control {
     padding: var(--space-24);
   }
 }
+
