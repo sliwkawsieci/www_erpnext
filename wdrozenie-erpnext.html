@@ -258,6 +258,29 @@
         </table>
       </section>
 
+      <section class="section calculator-section" id="kalkulator-roi">
+        <div class="container">
+          <h2 class="section-title">Kalkulator ROI</h2>
+          <form class="roi-calculator" aria-label="Kalkulator oszczędności">
+            <label for="admin-hours">Ile godzin tygodniowo na administrację? <span id="admin-hours-value">30</span>h</label>
+            <input type="range" id="admin-hours" name="admin-hours" min="10" max="60" value="30">
+
+            <label for="hourly-rate">Średnia stawka godzinowa (zł):</label>
+            <input type="number" id="hourly-rate" name="hourly-rate" value="60" min="20" max="400">
+
+            <label for="monthly-orders">Liczba zleceń miesięcznie: <span id="monthly-orders-value">120</span></label>
+            <input type="range" id="monthly-orders" name="monthly-orders" min="20" max="300" value="120">
+
+            <button type="button" class="btn btn-primary" id="calculate-btn">Oblicz oszczędności</button>
+            <div class="calculator-result">
+              <div>Twoja firma może zaoszczędzić: <strong id="annual-savings">0</strong> zł rocznie</div>
+              <div>ROI nastąpi po: <strong id="roi-months">0</strong> miesiącach</div>
+              <div>Zysk od 2 roku: <strong id="year-two-profit">0</strong> zł/rok</div>
+            </div>
+          </form>
+        </div>
+      </section>
+
       <section class="article-section" id="erpnext-start">
         <h2>ERPNext Start - gotowy system do szybkiego startu</h2>
         <p>Oferujemy gotowy, prekonfigurowany system ERPNext do szybkiego startu. Cena: <strong>3000 zł</strong>.</p>
@@ -294,6 +317,7 @@
   </main>
   
   <div data-partial="footer"></div>
+  <script src="scripts.js"></script>
   <script src="partials/site-partials.js"></script>
   <script src="app.js"></script>
 </body>
