@@ -6,15 +6,13 @@
   <title>Case Study: Wdrożenie ERPNext dla Producenta Mebli | 28 500 zł | ERPNext.pl</title>
   <meta name="description" content="Sprawdź jak producent mebli tapicerowanych zaoszczędził 100h miesięcznie dzięki ERPNext. Wdrożenie 28 500 zł, ROI w 9 miesięcy. Portal B2B, automatyzacja, integracje.">
   <meta name="keywords" content="erp dla produkcji, system erp meble, wdrożenie erp, erp b2b, erp polska">
-  <meta name="robots" content="noindex, nofollow, noarchive">
-  <meta name="googlebot" content="noindex, nofollow, noarchive">
-  <meta http-equiv="refresh" content="0; url=index.html">
   <meta property="og:title" content="Case Study: Producent Mebli + ERPNext = 100h oszczędności/mc">
   <meta property="og:description" content="Transformacja producenta mebli w 8 tygodni. Zobacz szczegóły wdrożenia za 28 500 zł.">
   <meta property="og:image" content="/images/case-study-meble-og.jpg">
   <meta property="og:url" content="https://erpnext.pl/wdrozenie-producent-mebli">
   <link rel="icon" href="pict/logo_nowe__.png" type="image/png">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="case-study.css">
   <script type="application/ld+json">
   {
@@ -62,7 +60,7 @@
             </div>
           </div>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#kontakt" aria-label="Umów bezpłatną konsultację">Umów bezpłatną konsultację</a>
+            <a class="btn btn-primary" href="#kontakt" aria-label="Umów bezpłatną konsultację" data-cta="consultation">Umów bezpłatną konsultację</a>
             <a class="btn btn-outline" href="/pdf/case-study-meble.pdf" aria-label="Pobierz pełne case study">Pobierz pełne case study (PDF)</a>
           </div>
         </div>
@@ -400,13 +398,13 @@
           </label>
           <label>Liczba zleceń miesięcznie
             <select id="orders" name="orders">
-              <option><50</option><option>50-100</option><option>100-200</option><option>200+</option>
+              <option>&lt;50</option><option>50-100</option><option>100-200</option><option>200+</option>
             </select>
           </label>
           <label>Wiadomość (opcjonalnie)
             <textarea id="message" name="message" rows="3"></textarea>
           </label>
-          <label><input type="checkbox" id="consent"> Zgadzam się na kontakt w sprawie wyceny wdrożenia ERPNext</label>
+          <label><input type="checkbox" id="consent" name="consent" value="yes" required> Zgadzam się na kontakt w sprawie wyceny wdrożenia ERPNext</label>
           <div class="contact-actions">
             <button type="submit" class="btn btn-primary" aria-label="Wyślij zapytanie o wycenę">Wyślij zapytanie o wycenę</button>
             <a class="btn btn-outline" href="tel:+48XXXXXXXXX">Lub zadzwoń: +48 XXX XXX XXX</a>

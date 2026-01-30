@@ -99,7 +99,8 @@ function initEvents() {
     window.dataLayer.push({ event: 'roi_calculator_used' });
   });
 
-  document.querySelectorAll('.btn-primary').forEach(btn => btn.addEventListener('click', () => {
+  // Track only explicit consultation CTAs to avoid counting calculator or form buttons
+  document.querySelectorAll('[data-cta="consultation"]').forEach(btn => btn.addEventListener('click', () => {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: 'cta_consultation_click' });
   }));
