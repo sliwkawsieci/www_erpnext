@@ -2,9 +2,20 @@
 const formatPL = (val) => Number(val || 0).toLocaleString('pl-PL');
 
 function calculateROI() {
-  const adminHours = Number(document.getElementById('admin-hours').value || 0);
-  const hourlyRate = Number(document.getElementById('hourly-rate').value || 0);
-  const monthlyOrders = Number(document.getElementById('monthly-orders').value || 0);
+  const adminHoursEl = document.getElementById('admin-hours');
+  const hourlyRateEl = document.getElementById('hourly-rate');
+  const monthlyOrdersEl = document.getElementById('monthly-orders');
+  const annualSavingsEl = document.getElementById('annual-savings');
+  const roiMonthsEl = document.getElementById('roi-months');
+  const yearTwoProfitEl = document.getElementById('year-two-profit');
+
+  if (!adminHoursEl || !hourlyRateEl || !monthlyOrdersEl || !annualSavingsEl || !roiMonthsEl || !yearTwoProfitEl) {
+    return;
+  }
+
+  const adminHours = Number(adminHoursEl.value || 0);
+  const hourlyRate = Number(hourlyRateEl.value || 0);
+  const monthlyOrders = Number(monthlyOrdersEl.value || 0);
 
   const timeSavings = (adminHours * 0.6) * 4.33 * hourlyRate;
   const errorSavings = (monthlyOrders * 0.15) * 50;
@@ -14,9 +25,9 @@ function calculateROI() {
   const monthlyReturn = annualSavings / 12 || 1;
   const roiMonths = Math.ceil((implementation + annualCost) / monthlyReturn);
 
-  document.getElementById('annual-savings').textContent = formatPL(annualSavings.toFixed(0));
-  document.getElementById('roi-months').textContent = roiMonths;
-  document.getElementById('year-two-profit').textContent = formatPL((annualSavings - annualCost).toFixed(0));
+  annualSavingsEl.textContent = formatPL(annualSavings.toFixed(0));
+  roiMonthsEl.textContent = roiMonths;
+  yearTwoProfitEl.textContent = formatPL((annualSavings - annualCost).toFixed(0));
 }
 
 function initAccordion() {

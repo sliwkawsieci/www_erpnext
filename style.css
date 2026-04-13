@@ -1420,6 +1420,61 @@ select.form-control {
   font-weight: var(--font-weight-semibold);
 }
 
+.support-benefits--callout {
+  text-align: left;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 1));
+  border-color: rgba(59, 130, 246, 0.22);
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+}
+
+.support-benefits--callout h3 {
+  margin-bottom: var(--space-16);
+}
+
+.support-benefits__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: var(--space-16);
+  padding: var(--space-6) var(--space-12);
+  border-radius: var(--radius-full);
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+
+.support-benefits__lead {
+  max-width: 760px;
+  margin-bottom: var(--space-24);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.support-benefits__price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-12);
+  margin-bottom: var(--space-32);
+  padding: var(--space-20) var(--space-24);
+  border-radius: var(--radius-lg);
+  background: var(--color-background);
+  border: 1px solid var(--color-card-border);
+}
+
+.support-benefits__price-value {
+  color: var(--color-primary);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+}
+
+.support-benefits__price-label {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+}
+
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1435,6 +1490,7 @@ select.form-control {
   padding: var(--space-16);
   background-color: var(--color-background);
   border-radius: var(--radius-base);
+  border: 1px solid var(--color-card-border);
   transition: all var(--duration-fast) var(--ease-standard);
 }
 
@@ -2222,6 +2278,10 @@ select.form-control {
   .support-benefits,
   .support-terms {
     padding: var(--space-24);
+  }
+
+  .support-benefits__price {
+    padding: var(--space-16) var(--space-20);
   }
 
   .why-choose-us h3,
@@ -3809,6 +3869,252 @@ select.form-control {
   background: rgba(var(--color-teal-500-rgb), 0.05);
 }
 
+/* Implementation Page */
+.implementation-intro {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: var(--space-56) var(--space-40);
+  border-radius: var(--radius-lg);
+}
+
+.implementation-section-title--center,
+.implementation-lead--center,
+.implementation-offer-header,
+.implementation-final-cta {
+  text-align: center;
+}
+
+.implementation-lead {
+  max-width: 760px;
+  margin-bottom: var(--space-32);
+}
+
+.implementation-lead--center,
+.implementation-lead--narrow {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.implementation-lead--narrow {
+  max-width: 720px;
+}
+
+.implementation-pillars,
+.implementation-card-grid,
+.implementation-stage-grid,
+.implementation-factors-grid {
+  display: grid;
+  gap: var(--space-24);
+}
+
+.implementation-pillars {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.implementation-pillar,
+.implementation-card,
+.implementation-highlight-card,
+.implementation-factor-card,
+.implementation-stage-card,
+.implementation-faq-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.implementation-pillar {
+  padding: 28px;
+  text-align: center;
+}
+
+.implementation-pillar__icon {
+  font-size: 40px;
+  margin-bottom: var(--space-12);
+}
+
+.implementation-pillar h3,
+.implementation-card h3,
+.implementation-highlight-card h3,
+.implementation-stage-card h3 {
+  margin-bottom: var(--space-12);
+}
+
+.implementation-card-grid,
+.implementation-factors-grid {
+  margin-top: var(--space-24);
+}
+
+.implementation-card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.implementation-card-grid--compact {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.implementation-card,
+.implementation-factor-card {
+  padding: var(--space-24);
+}
+
+.implementation-card--accent-blue {
+  background: #eff6ff;
+  border-color: rgba(37, 99, 235, 0.2);
+  border-left: 4px solid #2563eb;
+}
+
+.implementation-card--accent-slate {
+  background: #f8fafc;
+  border-color: rgba(71, 85, 105, 0.2);
+  border-left: 4px solid #475569;
+}
+
+.implementation-card--soft {
+  background: #fbfdff;
+}
+
+.implementation-offer-section {
+  padding: var(--space-48) var(--space-40);
+  border-radius: var(--radius-lg);
+}
+
+.implementation-offer-section--start {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+}
+
+.implementation-offer-section--standard {
+  background: linear-gradient(180deg, rgba(239, 246, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.implementation-offer-section--extended {
+  background: linear-gradient(180deg, rgba(248, 250, 252, 1) 0%, rgba(241, 245, 249, 0.85) 100%);
+}
+
+.implementation-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-full);
+  background: #f97316;
+  color: #fff;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-16);
+}
+
+.implementation-offer-header {
+  margin-bottom: var(--space-32);
+}
+
+.implementation-offer-section--start h2 {
+  color: #92400e;
+}
+
+.implementation-offer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: var(--space-32);
+  align-items: start;
+}
+
+.implementation-highlight-card {
+  padding: var(--space-32);
+  background: rgba(255, 255, 255, 0.92);
+  position: sticky;
+  top: 100px;
+}
+
+.implementation-stage-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: var(--space-24) 0;
+}
+
+.implementation-stage-card {
+  padding: var(--space-20);
+  border-left: 4px solid transparent;
+}
+
+.implementation-stage-card h3,
+.implementation-stage-card p,
+.implementation-factor-card p,
+.implementation-faq-item p {
+  margin: 0;
+}
+
+.implementation-stage-card p,
+.implementation-factor-card p {
+  margin-top: var(--space-8);
+}
+
+.implementation-stage-card--blue { background: #eff6ff; border-left-color: #2563eb; }
+.implementation-stage-card--violet { background: #f5f3ff; border-left-color: #8b5cf6; }
+.implementation-stage-card--green { background: #f0fdf4; border-left-color: #16a34a; }
+.implementation-stage-card--amber { background: #fef3c7; border-left-color: #d97706; }
+.implementation-stage-card--pink { background: #fce7f3; border-left-color: #ec4899; }
+.implementation-stage-card--cyan { background: #ecfeff; border-left-color: #0891b2; }
+.implementation-stage-card--slate { background: #f8fafc; border-left-color: #475569; }
+
+.implementation-factors-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.implementation-factor-card strong {
+  display: block;
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+}
+
+.implementation-assumptions {
+  background: #fff7ed;
+  padding: var(--space-48) var(--space-40);
+  border-radius: var(--radius-lg);
+}
+
+.implementation-faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.implementation-faq-item {
+  padding: var(--space-20);
+  margin-bottom: var(--space-16);
+}
+
+.implementation-faq-item summary {
+  cursor: pointer;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.implementation-faq-item[open] {
+  box-shadow: var(--shadow-md);
+}
+
+.implementation-faq-item p {
+  margin-top: var(--space-16);
+  color: var(--color-text-secondary);
+}
+
+.implementation-final-cta .btn--primary {
+  background-color: #10b981;
+  border: 2px solid #10b981;
+}
+
+.implementation-final-cta .btn--outline {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.implementation-cta-note {
+  margin-top: var(--space-20);
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
 /* CTA Buttons Group */
 .cta-buttons {
   display: flex;
@@ -3927,6 +4233,30 @@ select.form-control {
   .pricing-table td {
     padding: var(--space-12) var(--space-16);
     font-size: var(--font-size-sm);
+  }
+
+  .implementation-intro,
+  .implementation-offer-section,
+  .implementation-assumptions,
+  .implementation-final-cta {
+    padding: var(--space-32) var(--space-24);
+  }
+
+  .implementation-offer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .implementation-highlight-card {
+    position: static;
+    padding: var(--space-24);
+  }
+
+  .implementation-pillar,
+  .implementation-card,
+  .implementation-factor-card,
+  .implementation-stage-card,
+  .implementation-faq-item {
+    padding: var(--space-20);
   }
   
   .nav-dropdown {
