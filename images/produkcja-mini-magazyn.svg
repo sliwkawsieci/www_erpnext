@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="860" viewBox="0 0 1600 860" role="img" aria-labelledby="title desc">
+  <title id="title">Lekki magazyn ERPNext dla pakietu Produkcja Mini</title>
+  <desc id="desc">Przykładowy widok lekkiego interfejsu magazynowego do przyjęć i kompletacji.</desc>
+  <defs>
+    <linearGradient id="warehouseBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbf6ed"/>
+      <stop offset="50%" stop-color="#fbfbf8"/>
+      <stop offset="100%" stop-color="#eef7f4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="860" rx="28" fill="url(#warehouseBg)"/>
+  <rect x="24" y="20" width="1552" height="58" rx="18" fill="#fffaf2" stroke="#e8dfd1"/>
+  <rect x="40" y="32" width="34" height="34" rx="8" fill="#111827"/>
+  <text x="95" y="56" font-size="22" font-family="Arial, sans-serif" fill="#4b5563">Pulpit Zarzadzania</text>
+  <rect x="976" y="28" width="354" height="42" rx="21" fill="#f2efea" stroke="#e4ddcf"/>
+  <text x="1006" y="56" font-size="20" font-family="Arial, sans-serif" fill="#9ca3af">Wyszukaj lub wpisz polecenie</text>
+  <rect x="1446" y="26" width="116" height="46" rx="18" fill="#111"/>
+  <text x="1476" y="56" font-size="20" font-family="Arial, sans-serif" fill="#fff">Odswiez</text>
+
+  <text x="38" y="126" font-size="56" font-weight="700" font-family="Georgia, serif" fill="#111827">Lekki Magazyn</text>
+
+  <rect x="40" y="168" width="714" height="444" rx="34" fill="#fff" stroke="#e8e0d4"/>
+  <text x="76" y="228" font-size="18" letter-spacing="4" font-family="Arial, sans-serif" fill="#74807a">LEKKI WIDOK MOBILNY</text>
+  <text x="76" y="296" font-size="64" font-weight="700" font-family="Georgia, serif" fill="#1f2937">Lekki Magazyn</text>
+  <text x="76" y="346" font-size="24" font-family="Arial, sans-serif" fill="#667085">Przyjecia i kompletacja w najkrotszej sciezce roboczej.</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="76" y="404" width="266" height="142" rx="24" fill="#fff" stroke="#e8e0d4"/>
+    <text x="106" y="468" font-size="50" font-weight="700" fill="#111827">0</text>
+    <text x="106" y="512" font-size="20" fill="#6b7280">Robocze listy kompletacyjne</text>
+
+    <rect x="370" y="404" width="320" height="142" rx="24" fill="#fff" stroke="#e8e0d4"/>
+    <text x="400" y="468" font-size="50" font-weight="700" fill="#111827">0</text>
+    <text x="400" y="512" font-size="20" fill="#6b7280">Dopasowane dokumenty po ostatnim skanie</text>
+  </g>
+
+  <rect x="786" y="168" width="774" height="444" rx="34" fill="#f5fbfa" stroke="#d9ebe4"/>
+  <text x="828" y="250" font-size="60" font-weight="700" font-family="Georgia, serif" fill="#1f2937">Przyjecia</text>
+  <text x="828" y="304" font-size="24" font-family="Arial, sans-serif" fill="#667085">Najpierw skan, potem wybor dokumentu i utworzenie PZ.</text>
+  <rect x="828" y="340" width="308" height="42" rx="21" fill="#e7efec"/>
+  <text x="856" y="367" font-size="18" font-family="Arial, sans-serif" fill="#5b6b63">Kamera jak w standardzie ERPNext</text>
+  <rect x="828" y="404" width="644" height="156" rx="28" fill="#eef7f5" stroke="#d8ebe4"/>
+  <rect x="862" y="438" width="548" height="72" rx="22" fill="#fff" stroke="#dce7e2"/>
+  <text x="894" y="482" font-size="24" font-family="Arial, sans-serif" fill="#6b7280">Skanuj produkt do przyjecia</text>
+  <rect x="1428" y="438" width="74" height="72" rx="22" fill="#e7efec"/>
+  <text x="1453" y="482" font-size="28" font-family="Arial, sans-serif" fill="#55635b">[]</text>
+  <text x="860" y="548" font-size="20" font-family="Arial, sans-serif" fill="#6b7280">Dotknij ikone skanera, aby otworzyc aparat telefonu.</text>
+  <text x="1278" y="548" font-size="20" font-family="Arial, sans-serif" fill="#6b7280">Enter lub aparat</text>
+
+  <rect x="40" y="646" width="420" height="172" rx="28" fill="#fff" stroke="#e8e0d4"/>
+  <text x="74" y="706" font-size="54" font-weight="700" font-family="Georgia, serif" fill="#1f2937">Listy kompletacyjne</text>
+  <text x="74" y="750" font-size="24" font-family="Arial, sans-serif" fill="#667085">Brak roboczych list kompletacyjnych.</text>
+
+  <rect x="490" y="646" width="1070" height="172" rx="28" fill="#f7fcfb" stroke="#d9ebe4"/>
+  <text x="540" y="730" font-size="28" font-family="Arial, sans-serif" fill="#667085">Wybierz liste kompletacyjna, aby zaczac skanowanie.</text>
+</svg>

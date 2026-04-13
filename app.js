@@ -239,6 +239,11 @@ function setActiveNavLink(forcedSlug) {
         case 'helpdesk.html':
           slug = 'helpdesk';
           break;
+        case 'wdrozenie-erpnext.html':
+        case 'pakiety-wdrozeniowe.html':
+        case 'wdrozenie-produkcja-mini.html':
+          slug = 'wdrozenie';
+          break;
         default:
           slug = window.location.hash === '#contact-form' ? 'contact' : 'home';
       }
