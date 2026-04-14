@@ -4292,6 +4292,19 @@ select.form-control {
   font-weight: var(--font-weight-medium);
 }
 
+.package-chip-list--stacked {
+  display: grid;
+  gap: var(--space-12);
+  margin-top: var(--space-20);
+}
+
+.package-chip-list--stacked li {
+  border-radius: var(--radius-md);
+  background: rgba(20, 184, 166, 0.08);
+  color: var(--color-text);
+  text-align: center;
+}
+
 .package-checklist,
 .package-mini-faq-list {
   display: grid;
