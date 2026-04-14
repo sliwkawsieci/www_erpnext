@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Delay mobile nav setup to ensure partials are injected
   setTimeout(function() {
     setupMobileNavigation();
+    setupDesktopDropdownNavigation();
   }, 50);
   setActiveNavLink();
   setupExternalLinks();
@@ -152,7 +153,16 @@ function setupMobileNavigation() {
     toggleMenu();
   });
   navMenu.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
+    link.addEventListener('click', function (event) {
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      const isDropdownTrigger = link.classList.contains('nav-link--dropdown');
+      const href = (link.getAttribute('href') || '').trim();
+
+      if (isMobile && isDropdownTrigger && href === '#') {
+        event.preventDefault();
+        return;
+      }
+
       toggleMenu(false);
     });
   });
@@ -160,6 +170,72 @@ function setupMobileNavigation() {
     const isClickInside = navToggle.contains(event.target) || navMenu.contains(event.target);
     if (!isClickInside) {
       toggleMenu(false);
+    }
+  });
+}
+
+function setupDesktopDropdownNavigation() {
+  const navMenu = document.getElementById('navMenu');
+  if (!navMenu) return;
+
+  const dropdownItems = Array.from(navMenu.querySelectorAll('.nav-item-dropdown'));
+  if (!dropdownItems.length) return;
+
+  const isDesktopTouch = function () {
+    return window.matchMedia('(min-width: 769px)').matches && window.matchMedia('(hover: none), (pointer: coarse)').matches;
+  };
+
+  const closeAllDropdowns = function (exceptItem) {
+    dropdownItems.forEach(function (item) {
+      const keepOpen = !!exceptItem && item === exceptItem;
+      item.classList.toggle('is-open', keepOpen);
+
+      const trigger = item.querySelector('.nav-link--dropdown');
+      if (trigger) {
+        trigger.setAttribute('aria-expanded', keepOpen ? 'true' : 'false');
+      }
+    });
+  };
+
+  dropdownItems.forEach(function (item) {
+    const trigger = item.querySelector('.nav-link--dropdown');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', function (event) {
+      if (!isDesktopTouch()) return;
+
+      const href = (trigger.getAttribute('href') || '').trim();
+      const isOpen = item.classList.contains('is-open');
+      const navigates = href && href !== '#';
+
+      if (!isOpen) {
+        event.preventDefault();
+        closeAllDropdowns(item);
+        return;
+      }
+
+      if (!navigates) {
+        event.preventDefault();
+        closeAllDropdowns();
+      }
+    });
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!navMenu.contains(event.target)) {
+      closeAllDropdowns();
+    }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      closeAllDropdowns();
+    }
+  });
+
+  window.addEventListener('resize', function () {
+    if (!isDesktopTouch()) {
+      closeAllDropdowns();
     }
   });
 }
@@ -238,6 +314,11 @@ function setActiveNavLink(forcedSlug) {
           break;
         case 'helpdesk.html':
           slug = 'helpdesk';
+          break;
+        case 'wdrozenie-erpnext.html':
+        case 'pakiety-wdrozeniowe.html':
+        case 'wdrozenie-produkcja-mini.html':
+          slug = 'wdrozenie';
           break;
         default:
           slug = window.location.hash === '#contact-form' ? 'contact' : 'home';
