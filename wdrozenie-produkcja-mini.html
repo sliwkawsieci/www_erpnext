@@ -38,7 +38,7 @@
   <main class="main-content">
     <section class="page-hero package-offer-hero">
       <div class="hero-background">
-        <img src="pict/hero_office.png" alt="Pakiet Produkcja Mini ERPNext" class="hero-bg-image" loading="lazy" decoding="async">
+        <img src="pict/hero_office.png" alt="Pakiet Produkcja Mini ERPNext" class="hero-bg-image" loading="eager" fetchpriority="high" decoding="async">
         <div class="hero-overlay"></div>
       </div>
       <div class="container">
@@ -69,7 +69,7 @@
               <div class="package-kicker">Cena pakietu</div>
               <span class="package-price-panel__value">45 000 zł netto</span>
               <p class="package-price-panel__label">Stała cena za zakres opisany na tej stronie.</p>
-              <p class="package-price-panel__meta">Instalacja w chmurze producenta lub ERPtech jest w cenie. Instalacja na serwerach wewnętrznych klienta: <strong>dopłata +2000 zł netto</strong>.</p>
+              <p class="package-price-panel__meta">Instalacja w chmurze producenta lub ERPtech jest w cenie.</p>
               <a class="btn btn--primary btn--full-width" href="index.html#contact-form">Zapytaj o pakiet</a>
             </aside>
           </div>
@@ -95,6 +95,35 @@
           </div>
         </section>
 
+        <section class="article-section">
+          <h2>Czy ten pakiet jest dla Ciebie</h2>
+          <div class="package-fit-grid">
+            <div class="package-fit-card package-fit-card--positive">
+              <h3>Tak, jeśli</h3>
+              <ul class="package-checklist">
+                <li>masz 1 zakład i relatywnie prosty proces produkcyjny</li>
+                <li>chcesz uruchomić MTO albo MTS bez rozbudowanego MRP</li>
+                <li>zależy Ci na stałej cenie i jasno zamkniętym zakresie</li>
+                <li>nie potrzebujesz teraz integracji MES, WMS ani e-commerce</li>
+              </ul>
+            </div>
+            <div class="package-fit-card package-fit-card--muted">
+              <h3>Nie, jeśli</h3>
+              <ul class="package-checklist">
+                <li>potrzebujesz wielopoziomowych BOM-ów, routingu i planowania maszyn</li>
+                <li>wdrożenie ma objąć wiele wyjątków procesowych od pierwszego etapu</li>
+                <li>zakładasz pełną migrację historii lub rozbudowane automatyzacje</li>
+                <li>zakres od razu obejmuje integracje i rozwój customowy</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cta-inline">
+            <p>Masz prostą produkcję i chcesz szybko potwierdzić dopasowanie pakietu?</p>
+            <a class="btn btn--primary" href="index.html#contact-form">Umów krótką kwalifikację</a>
+          </div>
+        </section>
+
+        <!--
         <section class="article-section">
           <h2>Referencyjne widoki ERPNext v15 i v16</h2>
           <div class="package-reference-grid">
@@ -132,6 +161,7 @@
             </figure>
           </div>
         </section>
+        -->
 
         <section class="article-section">
           <h2>Wariant procesu do wyboru</h2>
@@ -317,6 +347,10 @@
               <p>To dobry wariant, gdy firma nie musi od razu łączyć ERP z zewnętrznymi serwisami, urządzeniami lub dodatkowymi systemami hali.</p>
             </div>
           </div>
+          <div class="cta-inline">
+            <p>Jeżeli ten model pasuje do Twojej firmy, warto potwierdzić zakres zanim wejdziesz w pełny projekt.</p>
+            <a class="btn btn--primary" href="index.html#contact-form">Sprawdź dopasowanie pakietu</a>
+          </div>
         </section>
 
         <section class="article-section">
@@ -346,51 +380,39 @@
                 <li>integracji z zewnętrznymi serwisami i urządzeniami</li>
                 <li>zaawansowanych routingów, operacji i stanowisk</li>
                 <li>planowania obciążenia maszyn</li>
-                <li>wielopoziomowych BOM-ów</li>
                 <li>MRP i zaawansowanego planowania</li>
                 <li>MTS z prognozami i automatyzacją zapasów</li>
-                <li>wynagrodzeń pracowników produkcji</li>
+                <li>pełnej migracji historii dokumentów i zleceń</li>
+                <li>custom developmentu, nowych DocType'ów i niestandardowych raportów</li>
               </ul>
             </div>
             <div class="package-detail-card">
-              <ul class="package-checklist">
-                <li>integracji księgowych: Subiekt, Optima, enova</li>
-                <li>integracji e-commerce: Woo, Shopify, Allegro</li>
-                <li>integracji z maszynami, wagami, skanerami i IoT</li>
-                <li>API i webhooków</li>
-                <li>migracji faktur</li>
-                <li>migracji zleceń sprzedaży</li>
-                <li>migracji zleceń zakupu</li>
-                <li>migracji zleceń produkcyjnych</li>
-              </ul>
-            </div>
-            <div class="package-detail-card">
-              <ul class="package-checklist">
-                <li>Power BI, Metabase i niestandardowych raportów SQL</li>
-                <li>layoutów druków tworzonych od zera</li>
-                <li>wieloetapowych workflow z akceptacjami</li>
-                <li>zaawansowanego routingu dokumentów i automatycznych powiadomień</li>
-                <li>skryptów serwerowych, auto-replenishment, auto-submission i auto-assign</li>
-                <li>nowych DocType'ów, własnych formularzy, zmian w core ERPNext i aplikacji Frappe App</li>
-              </ul>
-            </div>
-            <div class="package-detail-card">
-              <ul class="package-checklist">
-                <li>pełnej księgowości polskiej</li>
-                <li>integracji KSeF, raportów JPK i zaawansowanych podatków</li>
-                <li>zaawansowanego HR, list płac i obiegu urlopów</li>
-                <li>rozbudowanego CRM z lead scoringiem i rekrutacją</li>
-                <li>wielodniowych warsztatów procesowych, nagrań video i train the trainer</li>
-                <li>pełnego UAT z wieloma iteracjami i mapowania Value Stream</li>
-              </ul>
-            </div>
-            <div class="package-detail-card">
-              <ul class="package-checklist">
-                <li>custom developmentu i raportów niestandardowych</li>
-                <li>drugiej fali wdrożenia</li>
-                <li>rozbudowanych automatyzacji</li>
-                <li>pełnej migracji historii operacyjnej</li>
-              </ul>
+              <h3>Pełna lista wyłączeń</h3>
+              <details class="package-disclosure">
+                <summary>Zobacz szczegółowe ograniczenia pakietu Mini</summary>
+                <div class="package-disclosure__content">
+                  <ul class="package-checklist">
+                    <li>wielopoziomowych BOM-ów i wynagrodzeń pracowników produkcji</li>
+                    <li>integracji księgowych: Subiekt, Optima, enova</li>
+                    <li>integracji e-commerce: Woo, Shopify, Allegro</li>
+                    <li>integracji z maszynami, wagami, skanerami i IoT</li>
+                    <li>API i webhooków</li>
+                    <li>migracji faktur, zleceń sprzedaży, zakupów i produkcji</li>
+                    <li>Power BI, Metabase i niestandardowych raportów SQL</li>
+                    <li>layoutów druków tworzonych od zera</li>
+                    <li>wieloetapowych workflow z akceptacjami</li>
+                    <li>zaawansowanego routingu dokumentów i automatycznych powiadomień</li>
+                    <li>skryptów serwerowych, auto-replenishment, auto-submission i auto-assign</li>
+                    <li>zmian w core ERPNext i aplikacji Frappe App</li>
+                    <li>pełnej księgowości polskiej, KSeF, JPK i zaawansowanych podatków</li>
+                    <li>zaawansowanego HR, list płac i obiegu urlopów</li>
+                    <li>rozbudowanego CRM z lead scoringiem i rekrutacją</li>
+                    <li>wielodniowych warsztatów procesowych, nagrań video i train the trainer</li>
+                    <li>pełnego UAT z wieloma iteracjami i mapowania Value Stream</li>
+                    <li>drugiej fali wdrożenia i rozbudowanych automatyzacji</li>
+                  </ul>
+                </div>
+              </details>
             </div>
           </div>
         </section>
@@ -410,6 +432,129 @@
               <h3>Druga fala wdrożenia</h3>
               <p>Rozszerzenie o kolejne role, dodatkowy zakres procesu albo integracje wyceniamy jako osobny etap.</p>
             </div>
+            <div class="package-upsell-card">
+              <h3>Specyfikacja procesów TO-BE</h3>
+              <p>Mini analiza przedwdrożeniowa z uproszczonym mapowaniem AS-IS i propozycją procesu TO-BE dopasowanego do ERPNext, zamykana w dokumencie 20-40 stron.</p>
+            </div>
+            <div class="package-upsell-card">
+              <h3>E-commerce Connector</h3>
+              <p>Pakiet integracyjny poza zakresem MINI: WooCommerce, Allegro lub Baselinker w wariancie jednokierunkowym albo dwukierunkowym.</p>
+            </div>
+            <div class="package-upsell-card">
+              <h3>Etykiety i kody kreskowe</h3>
+              <p>Konfiguracja drukarek Zebra lub Godex, etykiet GS1 oraz kodów EAN, QR i GS1-128 dla produkcji i magazynu.</p>
+            </div>
+            <div class="package-upsell-card">
+              <h3>Konfiguracje rozszerzone</h3>
+              <p>Dodatkowe profile ról i uprawnień dla kierownictwa, bardziej rozbudowane dashboardy oraz dodatkowe formularze wydruków.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="article-section">
+          <div class="package-premium-box">
+            <div class="package-kicker package-kicker--premium">Pakiet dodatkowy premium</div>
+            <h2>Warsztaty Lean/Kaizen - optymalizacja procesów produkcji</h2>
+            <p class="package-premium-box__note">Opcja dodatkowa. Nie wchodzi w zakres pakietu podstawowego Produkcja Mini.</p>
+            <p class="package-premium-box__lead">Opcja dla firm, które chcą uporządkować realny przepływ pracy przed wdrożeniem ERPNext albo po uruchomieniu systemu. Celem warsztatów jest dopasowanie procesu do praktyki hali, ograniczenie zbędnych ruchów, wyjątków i ręcznych obejść oraz wskazanie, które zmiany warto wesprzeć bezpośrednio w ERPNext.</p>
+            <div class="package-detail-grid">
+              <div class="package-detail-card">
+                <h3>Zakres pracy</h3>
+                <ul class="package-checklist">
+                  <li>1 dzień warsztatu na miejscu: analiza przepływu materiałów i obserwacja procesu</li>
+                  <li>1 dzień opracowania dokumentacji i rekomendacji zmian</li>
+                  <li>przegląd materiałów i danych wejściowych po stronie klienta</li>
+                </ul>
+              </div>
+              <div class="package-detail-card">
+                <h3>Efekt dla klienta</h3>
+                <ul class="package-checklist">
+                  <li>mapa procesu AS-IS</li>
+                  <li>mapa procesu przyszłego TO-BE</li>
+                  <li>lista szybkich usprawnień (Quick Wins)</li>
+                  <li>lista zmian, które ERPNext może wspierać</li>
+                </ul>
+              </div>
+            </div>
+            <a class="btn btn--primary btn--lg" href="index.html#contact-form">Omów wariant premium</a>
+          </div>
+        </section>
+
+        <section class="article-section">
+          <h2>Master Data Cleaning</h2>
+          <p>Pakiety porządkowania danych przed importem do ERPNext. To osobna usługa, rozliczana przewidywalnie według skali danych.</p>
+          <div class="package-tier-grid">
+            <div class="package-tier-card">
+              <div class="package-kicker">Pakiet Basic</div>
+              <div class="package-tier-price">1 500 zł netto</div>
+              <ul class="package-checklist">
+                <li>czyszczenie listy produktów do 150 pozycji</li>
+                <li>standaryzacja nazw</li>
+                <li>ujednolicenie jednostek miary</li>
+                <li>usunięcie duplikatów</li>
+              </ul>
+            </div>
+            <div class="package-tier-card package-tier-card--highlight">
+              <div class="package-kicker">Pakiet Standard</div>
+              <div class="package-tier-price">3 000 zł netto</div>
+              <ul class="package-checklist">
+                <li>do 300 produktów</li>
+                <li>standaryzacja kategorii</li>
+                <li>porządkowanie jednostek miary</li>
+                <li>scalanie podobnych pozycji</li>
+                <li>wsparcie przy przygotowaniu CSV</li>
+              </ul>
+            </div>
+            <div class="package-tier-card">
+              <div class="package-kicker package-kicker--premium">Pakiet Premium</div>
+              <div class="package-tier-price">5 000-7 000 zł netto</div>
+              <ul class="package-checklist">
+                <li>powyżej 300 produktów</li>
+                <li>porządkowanie struktury kategorii i grup</li>
+                <li>dopasowanie atrybutów i wariantów</li>
+                <li>dedykowany konsultant i 1 warsztat online</li>
+                <li>finalny plik gotowy do importu ERPNext</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="article-section">
+          <h2>Przykładowe ekrany referencyjne ERPNext</h2>
+          <p>To orientacyjne widoki standardu ERPNext, które pomagają zrozumieć kierunek wdrożenia. Docelowy układ ekranów dopasowujemy do wariantu MTO albo MTS i ról użytkowników.</p>
+          <div class="package-reference-grid">
+            <figure class="package-reference-card">
+              <img src="images/erpnext-reference/erpnext-production-plan-v15.png" alt="ERPNext v15: formularz Production Plan" loading="lazy" decoding="async" />
+              <figcaption>
+                <strong>ERPNext v15: Production Plan</strong>
+                Bazowy widok planu produkcji w standardzie ERPNext.
+                <a href="https://docs.frappe.io/erpnext/v13/user/manual/en/manufacturing/production-plan" target="_blank" rel="noopener">Źródło: docs.frappe.io</a>
+              </figcaption>
+            </figure>
+            <figure class="package-reference-card">
+              <img src="images/erpnext-reference/erpnext-work-order-v15.png" alt="ERPNext v15: Work Order z akcją Start" loading="lazy" decoding="async" />
+              <figcaption>
+                <strong>ERPNext v15: Work Order</strong>
+                Standardowy widok zlecenia produkcyjnego z akcją uruchomienia pracy.
+                <a href="https://docs.frappe.io/erpnext/v13/user/manual/en/manufacturing/work-order" target="_blank" rel="noopener">Źródło: docs.frappe.io</a>
+              </figcaption>
+            </figure>
+            <figure class="package-reference-card">
+              <img src="images/erpnext-reference/erpnext-stock-reservation-v16.png" alt="ERPNext v16: Work Order i rezerwacja zapasu" loading="lazy" decoding="async" />
+              <figcaption>
+                <strong>ERPNext v16: Stock Reservation</strong>
+                Nowszy widok Work Order z obsługą rezerwacji zapasu.
+                <a href="https://docs.frappe.io/erpnext/stock-reservation-for-work-order" target="_blank" rel="noopener">Źródło: docs.frappe.io</a>
+              </figcaption>
+            </figure>
+            <figure class="package-reference-card">
+              <img src="images/erpnext-reference/erpnext-manufacturing-dashboard-v13.png" alt="ERPNext: Manufacturing Dashboard z wykresami produkcji" loading="lazy" decoding="async" />
+              <figcaption>
+                <strong>ERPNext: Manufacturing Dashboard</strong>
+                Referencyjny dashboard produkcyjny z wykresami i analizą realizacji.
+                <a href="https://docs.frappe.io/erpnext/v13/user/manual/en/manufacturing/manufacturing-dashboard" target="_blank" rel="noopener">Źródło: docs.frappe.io</a>
+              </figcaption>
+            </figure>
           </div>
         </section>
 
@@ -436,6 +581,10 @@
               <summary>Czy można rozszerzyć pakiet o integracje lub bardziej zaawansowaną logikę?</summary>
               <p>Tak, ale wtedy nie udajemy już wersji mini. Integracje, bardziej rozbudowane workflow, nowe DocType'y i dodatkowe aplikacje przechodzą do osobno wycenianej drugiej fali.</p>
             </details>
+          </div>
+          <div class="cta-inline">
+            <p>Masz już listę pytań lub chcesz przejść przez zakres punkt po punkcie?</p>
+            <a class="btn btn--primary" href="index.html#contact-form">Porozmawiaj o wdrożeniu</a>
           </div>
         </section>
 
