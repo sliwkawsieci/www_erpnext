@@ -5280,7 +5280,7 @@ select.form-control {
 
 .phase-card {
   background: var(--color-surface);
-  border: 1px solid var(--color-gray-300);
+  border: 1px solid var(--color-card-border);
   border-radius: 12px;
   padding: 1.5rem;
   position: relative;
@@ -5341,7 +5341,7 @@ select.form-control {
 
 .comparison-item {
   background: var(--color-surface);
-  border: 1px solid var(--color-gray-300);
+  border: 1px solid var(--color-card-border);
   border-radius: 12px;
   padding: 1.5rem;
   transition: all 0.3s ease;
@@ -5370,7 +5370,7 @@ select.form-control {
   gap: 0.75rem;
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-card-border-inner);
 }
 
 .comparison-header h4 {
