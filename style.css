@@ -4312,6 +4312,7 @@ select.form-control {
   gap: var(--space-8);
   flex-wrap: wrap;
   line-height: 1.2;
+  font-size: 1rem;
 }
 
 .price-old {
