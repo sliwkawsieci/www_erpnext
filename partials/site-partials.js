@@ -25,6 +25,7 @@ window.SITE_PARTIALS = window.SITE_PARTIALS || {
     '            <div class="nav-dropdown">',
     '              <a href="wdrozenie-erpnext.html">Jak wdra&#380;amy ERPNext</a>',
     '              <a href="pakiety-wdrozeniowe.html">Pakiety wdro&#380;eniowe</a>',
+    '              <a href="wdrozenie-erpnext-start.html">ERPNext Start</a>',
     '              <a href="wdrozenie-produkcja-start.html">Produkcja Start</a>',
     '            </div>',
     '          </li>',
