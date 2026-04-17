@@ -1,0 +1,22 @@
+name = "erpnext-pl-contact-worker"
+main = "contact-form.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+ADMIN_EMAIL = "biuro@erpnext.pl"
+LEAD_OWNER = "biuro@erpnext.pl"
+
+# Secrets (set via: wrangler secret put NAME)
+# ERPNEXT_URL = "https://system.erptech.cloud"
+# API_KEY = "your-api-key"
+# API_SECRET = "your-api-secret"
+
+[env.production]
+vars = { ENVIRONMENT = "production", DEBUG = "false" }
+
+[env.staging]
+vars = { ENVIRONMENT = "staging", DEBUG = "true" }
+
+# Routes - configure in Cloudflare Dashboard after deployment
+# erpnext.pl/api/contact
+# www.erpnext.pl/api/contact

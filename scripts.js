@@ -57,20 +57,88 @@ function initSmoothScroll() {
   });
 }
 
+// Contact form handler for Cloudflare Worker
+function getWorkerApiUrl() {
+  const host = window.location.hostname;
+  // Local development
+  if (host === 'localhost' || host === '127.0.0.1') {
+    return 'http://localhost:8787/api/contact';
+  }
+  // Production worker URL - update after deployment
+  // Get this from Cloudflare dashboard after deploying the worker
+  return 'https://erpnext-pl-contact-worker.your-account.workers.dev/api/contact';
+}
+
 function initForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
-  form.addEventListener('submit', (e) => {
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const successDiv = form.querySelector('.success-message');
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
     const consent = document.getElementById('consent');
-    if (!consent.checked) {
+    if (!consent || !consent.checked) {
       alert('Proszę zaznaczyć zgodę na kontakt');
       return;
     }
-    // TODO: podłączyć do backendu / API
-    const success = form.querySelector('.success-message');
-    if (success) success.classList.add('show');
-    form.dispatchEvent(new CustomEvent('contact_form_submit'));
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.dataset.originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Wysyłanie...';
+    }
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(getWorkerApiUrl(), {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      let result;
+      try {
+        result = await response.json();
+      } catch {
+        result = null;
+      }
+
+      if (!response.ok || !result || result.success !== true) {
+        const errorMsg = result?.error || `Błąd serwera: ${response.status}`;
+        alert('Błąd wysyłki: ' + errorMsg);
+        console.error('Form submission error:', result);
+        return;
+      }
+
+      // Success
+      form.reset();
+      if (successDiv) {
+        successDiv.classList.add('show');
+      }
+
+      // Track conversion
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'contact_form_submit_success' });
+
+      // Redirect after short delay if redirect_url provided
+      if (result.redirect_url) {
+        setTimeout(() => {
+          window.location.href = result.redirect_url;
+        }, 500);
+      }
+
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('Błąd połączenia. Spróbuj ponownie później.');
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = submitBtn.dataset.originalText || 'Wyślij';
+      }
+    }
   });
 }
 

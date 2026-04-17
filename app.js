@@ -561,6 +561,31 @@ function setupGA4Events() {
       });
     });
   });
+
+  // Track ALL .btn elements automatically (GA4 + Matomo)
+  document.querySelectorAll('.btn').forEach(function(btn) {
+    // Skip buttons already tracked by dedicated handlers above
+    if (btn.getAttribute('data-action') === 'contact') return;
+    if (btn.id === 'acceptCookies' || btn.id === 'rejectCookies') return;
+    if (btn.type === 'submit' && btn.closest('#contactForm')) return;
+
+    btn.addEventListener('click', function() {
+      var text = btn.textContent.trim();
+      var href = btn.getAttribute('href') || '';
+      var section = '';
+      var closest = btn.closest('section, .hero, [class*="cta"], .package-card, .footer');
+      if (closest) {
+        section = closest.id || closest.className.split(/\s+/)[0] || '';
+      }
+
+      sendAnalyticsEvent('btn_click', {
+        button_text: text,
+        button_url: href,
+        button_location: section,
+        page: window.location.pathname
+      });
+    });
+  });
 }
 
 /* Cookie Consent Banner */
